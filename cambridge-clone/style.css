@@ -30,6 +30,19 @@ html {
   padding: 0 20px;
 }
 
+/* Global Scroll Animation */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Active nav link */
 nav.main-nav a.active {
   color: #1A56DB;
@@ -2265,7 +2278,7 @@ nav.main-nav a:hover::before {
   .stat-text { font-size: 0.8rem; }
   .stat-dot { width: 10px; height: 10px; top: 14px; right: 14px; }
 
-  /* ----- 2. WHY US ACCORDION (fix: scroll reveal) ----- */
+  /* ----- 2. WHY US ACCORDION (Card Conversion for Mobile) ----- */
   .why-us { padding: 50px 0; }
   .why-us-wrapper { flex-direction: column; gap: 25px; }
   .why-us-content { flex: none; text-align: center; }
@@ -2275,93 +2288,50 @@ nav.main-nav a:hover::before {
   .accordion-container {
     flex-direction: column;
     height: auto;
-    gap: 10px;
+    gap: 16px;
   }
+  
+  /* Convert to Static Cards */
   .accordion-item {
     flex: none !important;
     width: 100%;
-    height: 65px;
-    border-radius: 16px;
-    transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
-                background 0.3s ease, 
-                box-shadow 0.3s ease;
-    background: #f1f5f9;
-    min-width: unset;
-  }
-
-  /* Hide hover-expand on mobile — use JS class instead */
-  .accordion-container:not(:hover) .accordion-item:last-child {
-    flex: none !important;
-    height: 65px;
-  }
-  .accordion-container .accordion-item:hover {
-    flex: none !important;
-  }
-  .accordion-container:not(:hover) .accordion-item:last-child .collapsed-content {
-    opacity: 1;
-    visibility: visible;
-  }
-  .accordion-container:not(:hover) .accordion-item:last-child .expanded-content {
-    opacity: 0;
-    visibility: hidden;
-  }
-  .accordion-container .accordion-item:hover .collapsed-content {
-    opacity: 1;
-    visibility: visible;
-  }
-  .accordion-container .accordion-item:hover .expanded-content {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  /* Collapsed content on mobile: horizontal row */
-  .collapsed-content {
-    flex-direction: row;
-    padding: 0 16px;
-    align-items: center;
-  }
-  .accordion-item .icon-wrap { margin-bottom: 0; margin-right: 12px; width: 36px; height: 36px; }
-  .accordion-item .icon-wrap svg { width: 16px; height: 16px; }
-  .accordion-item .vertical-text {
-    writing-mode: horizontal-tb;
-    transform: none;
-    margin-top: 0;
-    font-size: 0.9rem;
-  }
-
-  /* Mobile scroll-reveal expansion */
-  .accordion-item.mobile-in-view {
-    height: 160px;
+    height: auto !important;
+    border-radius: 20px;
     background: #ffffff;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-    border-color: rgba(26, 86, 219, 0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(26, 86, 219, 0.08);
+    transition: none; /* remove hover expansions */
   }
-  .accordion-item.mobile-in-view .collapsed-content {
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none;
+
+  /* Hide vertical text logic */
+  .accordion-item .collapsed-content {
+    display: none !important;
   }
-  .accordion-item.mobile-in-view .expanded-content {
+
+  /* Show fully expanded content permanently */
+  .accordion-item .expanded-content {
     opacity: 1 !important;
     visibility: visible !important;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    padding: 16px;
+    padding: 24px;
     gap: 16px;
     width: 100%;
-    position: absolute;
+    position: relative;
     pointer-events: auto;
+    text-align: center;
   }
-  .accordion-item.mobile-in-view .expanded-graphic {
+
+  .accordion-item .expanded-graphic {
     position: static;
     opacity: 1;
     flex-shrink: 0;
   }
-  .accordion-item.mobile-in-view .expanded-graphic svg { width: 50px; height: 50px; }
-  .accordion-item.mobile-in-view .expanded-text { margin-top: 0; }
-  .accordion-item.mobile-in-view .expanded-text h3 { font-size: 1.1rem; margin-bottom: 4px; }
-  .accordion-item.mobile-in-view .expanded-text p { font-size: 0.85rem; line-height: 1.4; }
+  .accordion-item .expanded-graphic svg { width: 44px; height: 44px; }
+  .accordion-item .expanded-text { margin-top: 0; }
+  .accordion-item .expanded-text h3 { font-size: 1.25rem; margin-bottom: 8px; }
+  .accordion-item .expanded-text p { font-size: 0.9rem; line-height: 1.5; color: #4B5563; }
 
   /* ----- COURSES SECTION ----- */
   .courses-section { padding: 50px 0; }
@@ -2395,55 +2365,63 @@ nav.main-nav a:hover::before {
   .res-score { font-size: 1.4rem; }
   .res-score span { font-size: 0.9rem; }
 
-  /* ----- 4. INSTRUCTORS SECTION (fix: not visible) ----- */
+  /* ----- 4. INSTRUCTORS SECTION (Card Conversion for Mobile) ----- */
   .instructors-section { padding: 50px 0; }
   .instructors-header { margin-bottom: 25px; }
   .instructors-header h2 { font-size: 1.8rem !important; }
   .instructors-header p { font-size: 0.85rem; }
+  
   .instructor-accordion {
     flex-direction: column;
     height: auto;
-    gap: 12px;
+    gap: 16px;
   }
+  
   .instructor-card {
-    flex: none;
+    flex: none !important;
     width: 100%;
-    height: 120px;
+    height: auto !important;
     border-radius: 20px;
-    transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    background: #ffffff;
+    transition: none; /* Disable hover expansion */
   }
-  .instructor-card.active {
-    flex: none;
-    height: 420px;
-  }
+  
+  /* Hide vertical text / closed state */
   .instructor-collapsed {
-    padding-bottom: 0;
-    align-items: center;
-    justify-content: center;
+    display: none !important;
   }
-  .instructor-subject {
-    writing-mode: horizontal-tb;
-    transform: none;
-    font-size: 0.95rem;
+  
+  /* Always show expanded content */
+  .instructor-expanded {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    padding: 24px;
   }
-  .instructor-expanded { padding: 20px; }
+  
   .instructor-info {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 16px;
   }
-  .instructor-info h3 { font-size: 1.6rem; }
-  .instructor-title { font-size: 0.9rem; margin-bottom: 12px; }
-  .instructor-video-wrapper { width: 140px; height: 90px; border-radius: 10px; }
+  .instructor-info h3 { font-size: 1.5rem; line-height: 1.2; }
+  .instructor-title { font-size: 0.95rem; margin-bottom: 12px; }
+  
+  .instructor-video-wrapper { 
+    width: 100%; 
+    height: 180px; 
+    border-radius: 12px; 
+  }
+  
   .instructor-stats-bento {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 16px;
     grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    gap: 10px;
   }
-  .inst-bento-card { padding: 10px 14px; border-radius: 10px; }
-  .inst-bento-value { font-size: 1.1rem; }
-  .inst-bento-label { font-size: 0.7rem; }
+  .inst-bento-card { padding: 12px; border-radius: 12px; }
+  .inst-bento-value { font-size: 1.2rem; }
+  .inst-bento-label { font-size: 0.75rem; }
 
   /* ----- 5. LOCATIONS / MAP (fix: too small) ----- */
   .locations-section { padding: 50px 0; }
