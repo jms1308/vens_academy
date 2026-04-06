@@ -2192,7 +2192,6 @@ nav.main-nav a:hover::before {
     z-index: 1001;
     box-shadow: 0 2px 15px rgba(0,0,0,0.05);
     margin: 0 !important;
-    overflow: hidden;
   }
 
   .logo-img { width: 48px !important; height: 48px !important; }
