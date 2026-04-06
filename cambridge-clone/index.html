@@ -794,7 +794,13 @@
                 <p>O'zingizga qulay bo'lgan filialni tanlang va darslarga yoziling</p>
             </div>
 
-            <div class="locations-content">
+            <div class="locations-content" data-mobile-view="map">
+                <!-- Mobile Tabs -->
+                <div class="mobile-locations-tabs">
+                    <button class="loc-tab active" data-target="map">See on the map</button>
+                    <button class="loc-tab" data-target="list">List of branches</button>
+                </div>
+
                 <div class="branches-list">
                     <!-- Branch 1 -->
                     <div class="branch-card active">
@@ -1251,6 +1257,19 @@
 
                 chartObserver.observe(chartSection);
             }
+        });
+        // Mobile Locations Tabs Logic
+        const locTabs = document.querySelectorAll('.loc-tab');
+        const locContent = document.querySelector('.locations-content');
+
+        locTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                locTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                if(locContent) {
+                    locContent.setAttribute('data-mobile-view', tab.getAttribute('data-target'));
+                }
+            });
         });
     </script>
 </body>
