@@ -11,6 +11,12 @@
 </head>
 
 <body>
+    <div class="promo-banner">
+        <div class="container">
+            <span><span data-i18n="promo_text">Qabul yopilishiga qoldi:</span> <strong id="countdown-timer">5 kun,
+                    00:00:00</strong></span>
+        </div>
+    </div>
     <div class="container">
         <header>
             <!-- Logo -->
@@ -25,29 +31,35 @@
             <!-- Centered Nav -->
             <nav class="main-nav" id="mainNav">
                 <ul>
-                    <li><a href="#courses">Kurslar</a></li>
-                    <li><a href="#achievers">Natijalar</a></li>
-                    <li><a href="#instructors">Ustozlarimiz</a></li>
-                    <li><a href="#locations">Manzil</a></li>
-                    <li><a href="#faq">Savollar</a></li>
+                    <li><a href="#courses" data-i18n="nav_courses">Kurslar</a></li>
+                    <li><a href="#achievers" data-i18n="nav_results">Natijalar</a></li>
+                    <li><a href="#instructors" data-i18n="nav_instructors">Ustozlarimiz</a></li>
+                    <li><a href="#locations" data-i18n="nav_locations">Manzil</a></li>
+                    <li><a href="#faq" data-i18n="nav_faq">Savollar</a></li>
                 </ul>
             </nav>
 
             <!-- Right side: lang + phone -->
             <div class="header-actions">
-                <div class="lang-selector">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10" />
-                        <line x1="2" y1="12" x2="22" y2="12" />
-                        <path
-                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                    </svg>
-                    <span>UZ</span>
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5">
-                        <path d="M6 9l6 6 6-6" />
-                    </svg>
+                <div class="lang-selector" id="langSelector">
+                    <div class="lang-current">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                        </svg>
+                        <span id="currentLang">UZ</span>
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </div>
+                    <ul class="lang-dropdown">
+                        <li data-lang="uz">O'zbekcha</li>
+                        <li data-lang="ru">Русский</li>
+                    </ul>
                 </div>
                 <a href="tel:+998908221525" class="btn-phone">
                     +998 90 822 15 25
@@ -66,14 +78,18 @@
             <div class="decoration dec-1">✦</div>
 
             <div class="hero-content scroll-animate">
-                <h1>Biz bilan <span class="text-blue">ACCA</span> yanada osonroq</h1>
-                <p>Toshkentdagi 500+ muvaffaqiyatli bitiruvchi bilan ishlagan o'quv markazi. Siz ham o'zgarishni bugun
+                <h1 class="hero-title">
+                    <span data-i18n="hero_title">6 oyda ACCA sertifikati oling —</span> <br>
+                    <span class="hero-subtitle" data-i18n="hero_subtitle">yoki pulni qaytarib beramiz</span>
+                </h1>
+                <p data-i18n="hero_desc">Toshkentdagi 500+ muvaffaqiyatli bitiruvchi bilan ishlagan o'quv markazi. Siz
+                    ham o'zgarishni bugun
                     boshlashingiz mumkin.</p>
                 <div class="hero-actions">
-                    <a href="tel:+998908221525" class="btn btn-signup">
-                        Kursga yozilish
+                    <a href="tel:+998908221525" class="btn btn-signup" data-i18n="btn_signup">
+                        Ro'yxatdan o'tish
                     </a>
-                    <a href="#stats" class="btn btn-gray">
+                    <a href="#stats" class="btn btn-gray" data-i18n="btn_details">
                         Batafsil
                     </a>
                 </div>
@@ -158,23 +174,53 @@
                 <div class="stat-card blue-hover">
                     <span class="stat-dot dot-blue"></span>
                     <h3 class="stat-number"><span class="counter" data-count="3">0</span>+</h3>
-                    <p class="stat-text">Yillik tajriba</p>
+                    <p class="stat-text" data-i18n="stat_experience">Yillik tajriba</p>
                 </div>
                 <div class="stat-card red-hover">
                     <span class="stat-dot dot-red"></span>
                     <h3 class="stat-number"><span class="counter" data-count="200">0</span>+</h3>
-                    <p class="stat-text">ACCA o'rganuvchilari</p>
+                    <p class="stat-text" data-i18n="stat_students">ACCA o'rganuvchilari</p>
                 </div>
                 <div class="stat-card yellow-hover">
                     <span class="stat-dot dot-yellow"></span>
                     <h3 class="stat-number"><span class="counter" data-count="94">0</span>%</h3>
-                    <p class="stat-text">O'tish darajasi</p>
+                    <p class="stat-text" data-i18n="stat_pass_rate">O'tish darajasi</p>
                 </div>
                 <div class="stat-card green-hover">
                     <span class="stat-dot dot-green"></span>
                     <h3 class="stat-number"><span class="counter" data-count="30">0</span>+</h3>
-                    <p class="stat-text">Top Achieverlar</p>
+                    <p class="stat-text" data-i18n="stat_achievers">Top Achieverlar</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners-ticker-section">
+        <div class="ticker-title" data-i18n="ticker_title">BITIRUVCHILAR ISHLAYDIGAN KOMPANIYALAR</div>
+        <div class="ticker-wrapper">
+            <div class="ticker-track">
+                <!-- Group 1 -->
+                <div class="ticker-item">DELOITTE</div>
+                <div class="ticker-item">PWC</div>
+                <div class="ticker-item">EY</div>
+                <div class="ticker-item">KPMG</div>
+                <div class="ticker-item">KAPITALBANK</div>
+                <div class="ticker-item">HAMKORBANK</div>
+                <div class="ticker-item">IPOTEKA BANK</div>
+                <div class="ticker-item">UZUM BANK</div>
+                <div class="ticker-item">MILLIY BANK</div>
+                <div class="ticker-item">UZPROMSTROYBANK</div>
+                <!-- Group 2 for infinite effect -->
+                <div class="ticker-item">DELOITTE</div>
+                <div class="ticker-item">PWC</div>
+                <div class="ticker-item">EY</div>
+                <div class="ticker-item">KPMG</div>
+                <div class="ticker-item">KAPITALBANK</div>
+                <div class="ticker-item">HAMKORBANK</div>
+                <div class="ticker-item">IPOTEKA BANK</div>
+                <div class="ticker-item">UZUM BANK</div>
+                <div class="ticker-item">MILLIY BANK</div>
+                <div class="ticker-item">UZPROMSTROYBANK</div>
             </div>
         </div>
     </section>
@@ -182,7 +228,7 @@
     <section class="pain-points" id="pain-points">
         <div class="container">
             <div class="pain-header scroll-animate">
-                <h2>Nima uchun ko'pchilik <span class="text-blue">ACCA</span> imtihonidan <br>o'ta olmaydi?</h2>
+                <h2 data-i18n="pain_header">Nima uchun ko'pchilik <span class="text-blue">ACCA</span> imtihonidan <br>o'ta olmaydi?</h2>
             </div>
 
             <div class="pain-grid">
@@ -195,8 +241,9 @@
                             <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
                         </svg>
                     </div>
-                    <h3>Noto'g'ri o'quv markazi</h3>
-                    <p>Materiallar eskirgan, o'qituvchi ACCA tajribasiga ega emas. Siz to'laysiz, lekin real bilim
+                    <h3 data-i18n="pain_card1_title">Noto'g'ri o'quv markazi</h3>
+                    <p data-i18n="pain_card1_desc">Materiallar eskirgan, o'qituvchi ACCA tajribasiga ega emas. Siz
+                        to'laysiz, lekin real bilim
                         olmaysiz.</p>
                 </div>
 
@@ -211,8 +258,9 @@
                             <line x1="23" y1="8" x2="18" y2="13"></line>
                         </svg>
                     </div>
-                    <h3>Yolg'iz o'qish</h3>
-                    <p>Motivatsiya yo'qoladi, savolga javob yo'q. Birinchi qiyinchilikda ko'pchilik tashlab ketadi.</p>
+                    <h3 data-i18n="pain_card2_title">Yolg'iz o'qish</h3>
+                    <p data-i18n="pain_card2_desc">Motivatsiya yo'qoladi, savolga javob yo'q. Birinchi qiyinchilikda
+                        ko'pchilik tashlab ketadi.</p>
                 </div>
 
                 <!-- Card 3 -->
@@ -227,22 +275,24 @@
                             <line x1="12" y1="17" x2="12.01" y2="17"></line>
                         </svg>
                     </div>
-                    <h3>Mock imtihonsiz borish</h3>
-                    <p>Real imtihon formatini bilmasdan kirish — eng katta xato. Vaqt va pul ketadi, natija yo'q.</p>
+                    <h3 data-i18n="pain_card3_title">Mock imtihonsiz borish</h3>
+                    <p data-i18n="pain_card3_desc">Real imtihon formatini bilmasdan kirish — eng katta xato. Vaqt va pul
+                        ketadi, natija yo'q.</p>
                 </div>
             </div>
 
             <div class="pain-solution scroll-animate">
-                <div class="solution-badge">YECHIM</div>
-                <h3>Vens Academy </h3>
+                <div class="solution-badge" data-i18n="solution_badge">YECHIM</div>
+                <h3 data-i18n="solution_title">Vens Academy </h3>
 
                 <div class="advantages-wrapper">
                     <!-- Item 1 -->
                     <div class="advantage-item">
                         <div class="advantage-dot"></div>
                         <div class="advantage-content">
-                            <h4>Yuqori natijadorlik</h4>
-                            <p>Markaz 2017-yildan beri faoliyat yuritadi. Eng muhim ko'rsatkichlaridan biri shuki,
+                            <h4 data-i18n="adv_card1_title">Yuqori natijadorlik</h4>
+                            <p data-i18n="adv_card1_desc">Markaz 2017-yildan beri faoliyat yuritadi. Eng muhim
+                                ko'rsatkichlaridan biri shuki,
                                 talabalarning imtihondan o'tish darajasi 94% ni tashkil qiladi.</p>
                         </div>
                     </div>
@@ -251,8 +301,9 @@
                     <div class="advantage-item">
                         <div class="advantage-dot"></div>
                         <div class="advantage-content">
-                            <h4>Kuchli mutaxassislar va qat'iy tayyorgarlik</h4>
-                            <p>Darslar faqat yuqori malakali ustozlar tomonidan o'tiladi. O'qitish nazariy emas, balki
+                            <h4 data-i18n="adv_card2_title">Kuchli mutaxassislar va qat'iy tayyorgarlik</h4>
+                            <p data-i18n="adv_card2_desc">Darslar faqat yuqori malakali ustozlar tomonidan o'tiladi.
+                                O'qitish nazariy emas, balki
                                 real imtihon savollari va amaliy misollarga asoslanadi.</p>
                         </div>
                     </div>
@@ -261,8 +312,9 @@
                     <div class="advantage-item">
                         <div class="advantage-dot"></div>
                         <div class="advantage-content">
-                            <h4>Individual yondashuv va kichik guruhlar</h4>
-                            <p>Sifatni saqlab qolish uchun darslar ko'pi bilan 10 kishilik kichik guruhlarda o'tiladi.
+                            <h4 data-i18n="adv_card3_title">Individual yondashuv va kichik guruhlar</h4>
+                            <p data-i18n="adv_card3_desc">Sifatni saqlab qolish uchun darslar ko'pi bilan 10 kishilik
+                                kichik guruhlarda o'tiladi.
                             </p>
                         </div>
                     </div>
@@ -271,8 +323,9 @@
                     <div class="advantage-item">
                         <div class="advantage-dot"></div>
                         <div class="advantage-content">
-                            <h4>Global maqsad</h4>
-                            <p>Asosiy yo'nalish — 180+ davlatda tan olinadigan xalqaro ACCA sertifikatini olish orqali
+                            <h4 data-i18n="adv_card4_title">Global maqsad</h4>
+                            <p data-i18n="adv_card4_desc">Asosiy yo'nalish — 180+ davlatda tan olinadigan xalqaro ACCA
+                                sertifikatini olish orqali
                                 talabalar karyerasini xalqaro darajaga olib chiqish.</p>
                         </div>
                     </div>
@@ -285,8 +338,10 @@
         <div class="container">
             <div class="why-us-wrapper">
                 <div class="why-us-content scroll-animate">
-                    <h2 class="why-title"><span class="text-blue">NEGA</span><br>VEN'S ACADEMY?</h2>
-                    <p class="why-desc">Ven's Academy o'quv markazi talabalar uchun qulay sharoitlar yaratadi va har kim
+                    <h2 class="why-title" data-i18n="why_title"><span class="text-blue">NEGA</span><br>VEN'S ACADEMY?
+                    </h2>
+                    <p class="why-desc" data-i18n="why_desc">Ven's Academy o'quv markazi talabalar uchun qulay
+                        sharoitlar yaratadi va har kim
                         ta'lim olishi uchun hamyonbop narxlarda sifatli ta'lim taklif etadi.</p>
                 </div>
 
@@ -303,7 +358,7 @@
                                     <line x1="7" y1="7" x2="7.01" y2="7"></line>
                                 </svg>
                             </div>
-                            <div class="vertical-text">Hamyonbop narxlar</div>
+                            <div class="vertical-text" data-i18n="why_item1_v">Hamyonbop narxlar</div>
                         </div>
                         <div class="expanded-content">
                             <div class="expanded-graphic">
@@ -316,8 +371,8 @@
                                 </svg>
                             </div>
                             <div class="expanded-text">
-                                <h3>Hamyonbop narxlar</h3>
-                                <p>Barcha uchun qulay bo'lgan narxlardagi sifatli ta'lim.</p>
+                                <h3 data-i18n="why_item1_title">Hamyonbop narxlar</h3>
+                                <p data-i18n="why_item1_desc">Barcha uchun qulay bo'lgan narxlardagi sifatli ta'lim.</p>
                             </div>
                         </div>
                     </div>
@@ -332,7 +387,7 @@
                                     <circle cx="12" cy="10" r="3"></circle>
                                 </svg>
                             </div>
-                            <div class="vertical-text">Qulay joylashuv</div>
+                            <div class="vertical-text" data-i18n="why_item2_v">Qulay joylashuv</div>
                         </div>
                         <div class="expanded-content">
                             <div class="expanded-graphic">
@@ -343,8 +398,9 @@
                                 </svg>
                             </div>
                             <div class="expanded-text">
-                                <h3>Qulay joylashuv</h3>
-                                <p>Shaharning istalgan nuqtasidan yetib kelish uchun qulay lokatsiyalar.</p>
+                                <h3 data-i18n="why_item2_title">Qulay joylashuv</h3>
+                                <p data-i18n="why_item2_desc">Shaharning istalgan nuqtasidan yetib kelish uchun qulay
+                                    lokatsiyalar.</p>
                             </div>
                         </div>
                     </div>
@@ -360,7 +416,7 @@
                                     <polyline points="12 22 12 7"></polyline>
                                 </svg>
                             </div>
-                            <div class="vertical-text">Sifatli ta'lim</div>
+                            <div class="vertical-text" data-i18n="why_item3_v">Sifatli ta'lim</div>
                         </div>
                         <div class="expanded-content">
                             <div class="expanded-graphic">
@@ -372,8 +428,9 @@
                                 </svg>
                             </div>
                             <div class="expanded-text">
-                                <h3>Sifatli ta'lim</h3>
-                                <p>Zamonaviy metodika va xalqaro standartlar asosida ta'lim olish imkoniyati.</p>
+                                <h3 data-i18n="why_item3_title">Sifatli ta'lim</h3>
+                                <p data-i18n="why_item3_desc">Zamonaviy metodika va xalqaro standartlar asosida ta'lim
+                                    olish imkoniyati.</p>
                             </div>
                         </div>
                     </div>
@@ -388,7 +445,7 @@
                                     <circle cx="12" cy="7" r="4"></circle>
                                 </svg>
                             </div>
-                            <div class="vertical-text">Malakali o'qituvchilar</div>
+                            <div class="vertical-text" data-i18n="why_item4_v">Malakali o'qituvchilar</div>
                         </div>
                         <div class="expanded-content">
                             <div class="expanded-graphic">
@@ -399,8 +456,9 @@
                                 </svg>
                             </div>
                             <div class="expanded-text">
-                                <h3>Malakali o'qituvchilar</h3>
-                                <p>ACCA bo'yicha tajribali ustozlar jamoasi. ACCA member, Affiliate bo'lgan ustozlar
+                                <h3 data-i18n="why_item4_title">Malakali o'qituvchilar</h3>
+                                <p data-i18n="why_item4_desc">ACCA bo'yicha tajribali ustozlar jamoasi. ACCA member,
+                                    Affiliate bo'lgan ustozlar
                                     tomonidan dars beriladi. </p>
                             </div>
                         </div>
@@ -417,7 +475,7 @@
                                     <polyline points="17 11 19 13 23 9"></polyline>
                                 </svg>
                             </div>
-                            <div class="vertical-text">Ishga Kafolat</div>
+                            <div class="vertical-text" data-i18n="why_item5_v">Ishga Kafolat</div>
                         </div>
                         <div class="expanded-content">
                             <div class="expanded-graphic">
@@ -429,8 +487,9 @@
                                 </svg>
                             </div>
                             <div class="expanded-text">
-                                <h3>Karyera boshlanishi</h3>
-                                <p>Bizning ta'limni muvaffaqiyatli yakunlagan bitiruvchilarni nufuzli kompaniyalarga ish
+                                <h3 data-i18n="why_item5_title">Karyera boshlanishi</h3>
+                                <p data-i18n="why_item5_desc">Bizning ta'limni muvaffaqiyatli yakunlagan bitiruvchilarni
+                                    nufuzli kompaniyalarga ish
                                     bilan ta'minlashga kafolat beramiz.</p>
                             </div>
                         </div>
@@ -445,7 +504,7 @@
                                     <path d="M12 20v-6M6 20V10M18 20V4" stroke-linecap="round"></path>
                                 </svg>
                             </div>
-                            <div class="vertical-text">82% Muvaffaqiyat</div>
+                            <div class="vertical-text" data-i18n="why_item6_v">82% Muvaffaqiyat</div>
                         </div>
                         <div class="expanded-content">
                             <div class="expanded-graphic">
@@ -455,8 +514,9 @@
                                 </svg>
                             </div>
                             <div class="expanded-text">
-                                <h3>Yuqori natijalar</h3>
-                                <p>Talabalarimizning imtihonlardan o'tish ko'rsatkichi umumjahon statistikasidan ancha
+                                <h3 data-i18n="why_item6_title">Yuqori natijalar</h3>
+                                <p data-i18n="why_item6_desc">Talabalarimizning imtihonlardan o'tish ko'rsatkichi
+                                    umumjahon statistikasidan ancha
                                     yuqori bo'lib, umumiy 82% ni tashkil qiladi.</p>
                             </div>
                         </div>
@@ -471,13 +531,13 @@
         <div class="container">
             <div class="courses-top">
                 <div class="courses-header">
-                    <h2><span class="text-blue">KURSLAR</span> VA QABUL</h2>
-                    <p>Qabulxonaga
+                    <h2 data-i18n="courses_title"><span class="text-blue">KURSLAR</span> VA QABUL</h2>
+                    <p data-i18n="courses_desc">Qabulxonaga
                         kelganingizda, bizning xodimlarimiz sinov va qisqa suhbat orqali darajangizni aniqlaydi va sizni
                         mos guruhga sinov darsiga yo'naltiradi.</p>
                 </div>
                 <button class="btn btn-blue signup-btn">
-                    Kursga yozilish
+                    <span data-i18n="btn_enroll">Kursga yozilish</span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <path
@@ -498,12 +558,15 @@
                             <line x1="8" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="2"></line>
                         </svg>
                     </div>
-                    <h3>F1 – F3</h3>
-                    <p class="course-subtitle">Asosiy bilimlar (F1-F3)</p>
-                    <p class="course-desc">Moliya olamiga ilk qadam. Biznes va moliyaviy hisobot prinsiplarini noldan
+                    <h3 data-i18n="course1_title">F1 – F3</h3>
+                    <p class="course-subtitle" data-i18n="course1_subtitle">Asosiy bilimlar (F1-F3)</p>
+                    <p class="course-desc" data-i18n="course1_desc">Moliya olamiga ilk qadam. Biznes va moliyaviy
+                        hisobot prinsiplarini noldan
                         o'rganing.</p>
-                    <p class="course-target"><strong>Kim uchun:</strong> Sohaga endi kirib kelganlar uchun.</p>
-                    <span class="course-arrow">&rarr;</span>
+                    <p class="course-target"><strong data-i18n="course_for">Kim uchun:</strong> <span
+                            data-i18n="course1_target">Sohaga endi kirib kelganlar uchun.</span></p>
+                    <span class="course-arrow"><span class="signup-text" data-i18n="course_signup">Ro'yxatdan
+                            o'tish</span> &rarr;</span>
                 </div>
                 <div class="course-card">
                     <div class="course-icon">
@@ -514,13 +577,16 @@
                             <polyline points="2 17 12 22 22 17"></polyline>
                         </svg>
                     </div>
-                    <h3>F4 – F9</h3>
-                    <p class="course-subtitle">Professional ko'nikmalar (F4-F9)</p>
-                    <p class="course-desc">Big 4 va xalqaro kompaniyalar talab qiladigan daraja. Real moliyaviy
+                    <h3 data-i18n="course2_title">F4 – F9</h3>
+                    <p class="course-subtitle" data-i18n="course2_subtitle">Professional ko'nikmalar (F4-F9)</p>
+                    <p class="course-desc" data-i18n="course2_desc">Big 4 va xalqaro kompaniyalar talab qiladigan
+                        daraja. Real moliyaviy
                         modellashtirish va murakkab biznes keyslarni hal qilishni o'zlashtiring.</p>
-                    <p class="course-target"><strong>Kim uchun:</strong> Karyerasini o'stirmoqchi bo'lgan auditorlar va
-                        moliya tahlilchilari uchun.</p>
-                    <span class="course-arrow">&rarr;</span>
+                    <p class="course-target"><strong data-i18n="course_for">Kim uchun:</strong> <span
+                            data-i18n="course2_target">Karyerasini o'stirmoqchi bo'lgan auditorlar va
+                            moliya tahlilchilari uchun.</span></p>
+                    <span class="course-arrow"><span class="signup-text" data-i18n="course_signup">Ro'yxatdan
+                            o'tish</span> &rarr;</span>
                 </div>
                 <div class="course-card">
                     <div class="course-icon">
@@ -533,13 +599,16 @@
                             </path>
                         </svg>
                     </div>
-                    <h3>DipIFR</h3>
-                    <p class="course-subtitle">Xalqaro standartlar (DipIFR)</p>
-                    <p class="course-desc">MHXS (IFRS 9, 15 va boshqalar) bo'yicha global diplom. Murakkab hisobotlarni
+                    <h3 data-i18n="course3_title">DipIFR</h3>
+                    <p class="course-subtitle" data-i18n="course3_subtitle">Xalqaro standartlar (DipIFR)</p>
+                    <p class="course-desc" data-i18n="course3_desc">MHXS (IFRS 9, 15 va boshqalar) bo'yicha global
+                        diplom. Murakkab hisobotlarni
                         tuzish va xalqaro tizimga o'tishni o'rganing.</p>
-                    <p class="course-target"><strong>Kim uchun:</strong> Malakasini oshirmoqchi bo'lgan tajribali
-                        buxgalter va moliya menejerlari uchun.</p>
-                    <span class="course-arrow">&rarr;</span>
+                    <p class="course-target"><strong data-i18n="course_for">Kim uchun:</strong> <span
+                            data-i18n="course3_target">Malakasini oshirmoqchi bo'lgan tajribali
+                            buxgalter va moliya menejerlari uchun.</span></p>
+                    <span class="course-arrow"><span class="signup-text" data-i18n="course_signup">Ro'yxatdan
+                            o'tish</span> &rarr;</span>
                 </div>
             </div>
         </div>
@@ -548,7 +617,7 @@
     <section class="benefits-section" id="benefits">
         <div class="container">
             <div class="benefits-header scroll-animate">
-                <h2><span class="text-blue">ACCA</span> SERTIFIKATI NIMA BERADI?</h2>
+                <h2 data-i18n="benefits_title"><span class="text-blue">ACCA</span> SERTIFIKATI NIMA BERADI?</h2>
             </div>
 
             <div class="benefits-grid">
@@ -565,8 +634,8 @@
                         </svg>
                     </div>
                     <div class="benefit-info">
-                        <h3>180+ mamlakatda tan olinadi</h3>
-                        <p>ACCA — dunyo bo'yicha eng nufuzli moliyaviy sertifikatlardan biri. Istalgan mamlakatda
+                        <h3 data-i18n="benefit1_title">180+ mamlakatda tan olinadi</h3>
+                        <p data-i18n="benefit1_desc">ACCA — dunyo bo'yicha eng nufuzli moliyaviy sertifikatlardan biri. Istalgan mamlakatda
                             karyera qurish imkoniyatini beradi.</p>
                     </div>
                 </div>
@@ -581,8 +650,8 @@
                         </svg>
                     </div>
                     <div class="benefit-info">
-                        <h3>Maosh 40–80% oshadi</h3>
-                        <p>O'zbekiston statistikasiga ko'ra, ACCA sertifikatlangan mutaxassislar o'rtacha 40–80% yuqori
+                        <h3 data-i18n="benefit2_title">Maosh 40–80% oshadi</h3>
+                        <p data-i18n="benefit2_desc">O'zbekiston statistikasiga ko'ra, ACCA sertifikatlangan mutaxassislar o'rtacha 40–80% yuqori
                             maosh oladi.</p>
                     </div>
                 </div>
@@ -610,8 +679,8 @@
                         </svg>
                     </div>
                     <div class="benefit-info">
-                        <h3>Big 4 va xalqaro tashkilotlar</h3>
-                        <p>Deloitte, PwC, EY, KPMG va xalqaro banklar ACCA sertifikatini talab qiladi yoki afzal
+                        <h3 data-i18n="benefit3_title">Big 4 va xalqaro tashkilotlar</h3>
+                        <p data-i18n="benefit3_desc">Deloitte, PwC, EY, KPMG va xalqaro banklar ACCA sertifikatini talab qiladi yoki afzal
                             ko'radi.</p>
                     </div>
                 </div>
@@ -628,8 +697,8 @@
                         </svg>
                     </div>
                     <div class="benefit-info">
-                        <h3>Ish bilan birga o'qish mumkin</h3>
-                        <p>Kechki va ertalabki guruhlar mavjud. O'qishni ish grafigingizga moslashtiramiz.</p>
+                        <h3 data-i18n="benefit4_title">Ish bilan birga o'qish mumkin</h3>
+                        <p data-i18n="benefit4_desc">Kechki va ertalabki guruhlar mavjud. O'qishni ish grafigingizga moslashtiramiz.</p>
                     </div>
                 </div>
             </div>
@@ -640,10 +709,11 @@
         <div class="container">
             <div class="achievers-top">
                 <div class="achievers-header">
-                    <h2><span class="text-blue">BIZNING</span> TOP ACHIEVERLAR</h2>
-                    <p>ACCA kurslarimizni muvaffaqiyatli tamomlagan o'quvchilarimizning natijalari bilan tanishing</p>
+                    <h2 data-i18n="achievers_title"><span class="text-blue">BIZNING</span> TOP ACHIEVERLAR</h2>
+                    <p data-i18n="achievers_desc">ACCA kurslarimizni muvaffaqiyatli tamomlagan o'quvchilarimizning
+                        natijalari bilan tanishing</p>
                 </div>
-                <button id="viewAllBtn">View all <span>&rarr;</span></button>
+                <button id="viewAllBtn"><span data-i18n="btn_view_all">View all</span> <span>&rarr;</span></button>
             </div>
             <div class="achievers-grid" id="achieversGrid">
                 <!-- Rendered by JS -->
@@ -656,8 +726,8 @@
     <section class="instructors-section" id="instructors">
         <div class="container">
             <div class="instructors-header scroll-animate">
-                <h2><span class="text-blue">BIZNING</span> USTOZLAR</h2>
-                <p>O'z sohasining haqiqiy ekspertlari bilan tanishing</p>
+                <h2 data-i18n="instructors_title"><span class="text-blue">BIZNING</span> USTOZLAR</h2>
+                <p data-i18n="instructors_desc">O'z sohasining haqiqiy ekspertlari bilan tanishing</p>
             </div>
 
             <div class="instructor-accordion" id="instructorAccordion">
@@ -670,22 +740,23 @@
                     <div class="instructor-expanded">
                         <div class="instructor-info">
                             <div class="instructor-main-info">
-                                <h3>David Smith</h3>
-                                <p class="instructor-title">Senior Finance Tutor</p>
+                                <h3 data-i18n="inst1_name">David Smith</h3>
+                                <p class="instructor-title" data-i18n="inst1_title">Senior Finance Tutor</p>
                             </div>
 
                             <div class="instructor-stats-bento">
                                 <div class="inst-bento-card inst-bento-wide">
                                     <span class="inst-bento-value">Big 4</span>
-                                    <span class="inst-bento-label">Senior Auditor tajribasi</span>
+                                    <span class="inst-bento-label" data-i18n="inst_exp_label">Senior Auditor
+                                        tajribasi</span>
                                 </div>
                                 <div class="inst-bento-card">
                                     <span class="inst-bento-value">85%</span>
-                                    <span class="inst-bento-label">Pass rate</span>
+                                    <span class="inst-bento-label" data-i18n="inst_pass_label">Pass rate</span>
                                 </div>
                                 <div class="inst-bento-card">
                                     <span class="inst-bento-value">7+</span>
-                                    <span class="inst-bento-label">Yillik tajriba</span>
+                                    <span class="inst-bento-label" data-i18n="inst_years_label">Yillik tajriba</span>
                                 </div>
                             </div>
                         </div>
@@ -701,22 +772,22 @@
                     <div class="instructor-expanded">
                         <div class="instructor-info">
                             <div class="instructor-main-info">
-                                <h3>Sarah Jenkins</h3>
-                                <p class="instructor-title">Audit Expert</p>
+                                <h3 data-i18n="inst2_name">Sarah Jenkins</h3>
+                                <p class="instructor-title" data-i18n="inst2_title">Audit Expert</p>
                             </div>
 
                             <div class="instructor-stats-bento">
                                 <div class="inst-bento-card inst-bento-wide">
                                     <span class="inst-bento-value">PwC</span>
-                                    <span class="inst-bento-label">Sobiq menejer</span>
+                                    <span class="inst-bento-label" data-i18n="inst2_exp_label">Sobiq menejer</span>
                                 </div>
                                 <div class="inst-bento-card">
                                     <span class="inst-bento-value">90%</span>
-                                    <span class="inst-bento-label">Pass rate</span>
+                                    <span class="inst-bento-label" data-i18n="inst_pass_label">Pass rate</span>
                                 </div>
                                 <div class="inst-bento-card">
                                     <span class="inst-bento-value">5+</span>
-                                    <span class="inst-bento-label">Yillik tajriba</span>
+                                    <span class="inst-bento-label" data-i18n="inst_years_label">Yillik tajriba</span>
                                 </div>
                             </div>
                         </div>
@@ -732,22 +803,22 @@
                     <div class="instructor-expanded">
                         <div class="instructor-info">
                             <div class="instructor-main-info">
-                                <h3>Michael Roe</h3>
-                                <p class="instructor-title">IFRS Specialist</p>
+                                <h3 data-i18n="inst3_name">Michael Roe</h3>
+                                <p class="instructor-title" data-i18n="inst3_title">IFRS Specialist</p>
                             </div>
 
                             <div class="instructor-stats-bento">
                                 <div class="inst-bento-card inst-bento-wide">
                                     <span class="inst-bento-value">Ernst & Young</span>
-                                    <span class="inst-bento-label">Consultant</span>
+                                    <span class="inst-bento-label" data-i18n="inst3_exp_label">Consultant</span>
                                 </div>
                                 <div class="inst-bento-card">
                                     <span class="inst-bento-value">82%</span>
-                                    <span class="inst-bento-label">Pass rate</span>
+                                    <span class="inst-bento-label" data-i18n="inst_pass_label">Pass rate</span>
                                 </div>
                                 <div class="inst-bento-card">
                                     <span class="inst-bento-value">12+</span>
-                                    <span class="inst-bento-label">Yillik tajriba</span>
+                                    <span class="inst-bento-label" data-i18n="inst_years_label">Yillik tajriba</span>
                                 </div>
                             </div>
                         </div>
@@ -791,15 +862,15 @@
     <section class="locations-section" id="locations">
         <div class="container">
             <div class="locations-header scroll-animate">
-                <h2><span class="text-blue">BIZNING</span> MANZILLARIMIZ</h2>
-                <p>O'zingizga qulay bo'lgan filialni tanlang va darslarga yoziling</p>
+                <h2 data-i18n="locations_title"><span class="text-blue">BIZNING</span> MANZILLARIMIZ</h2>
+                <p data-i18n="locations_desc">O'zingizga qulay bo'lgan filialni tanlang va darslarga yoziling</p>
             </div>
 
             <div class="locations-content" data-mobile-view="map">
                 <!-- Mobile Tabs -->
                 <div class="mobile-locations-tabs">
-                    <button class="loc-tab active" data-target="map">See on the map</button>
-                    <button class="loc-tab" data-target="list">List of branches</button>
+                    <button class="loc-tab active" data-target="map" data-i18n="loc_tab_map">See on the map</button>
+                    <button class="loc-tab" data-target="list" data-i18n="loc_tab_list">List of branches</button>
                 </div>
 
                 <div class="branches-list">
@@ -807,7 +878,7 @@
                     <div class="branch-card active">
                         <div class="branch-img">
                             <img src="images/branch-1.png" alt="University">
-                            <div class="branch-tag">University</div>
+                            <div class="branch-tag" data-i18n="branch1_tag">University</div>
                         </div>
                         <div class="branch-info">
                             <h3>Ven's Academy
@@ -819,12 +890,12 @@
                                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                         <circle cx="12" cy="10" r="3"></circle>
                                     </svg>
-                                    <span>Toshkent, Yunusobod tumani, Amir Temur shoh ko'chasi, 107B</span>
+                                    <span data-i18n="branch1_addr">Toshkent, Yunusobod tumani, Amir Temur shoh ko'chasi, 107B</span>
                                 </div>
                                 <div class="branch-metro">
                                     <div class="metro-icon">M</div>
-                                    <span>Minor</span>
-                                    <span class="metro-dist">350 m</span>
+                                    <span data-i18n="metro_minor">Minor</span>
+                                    <span class="metro-dist">350 <span data-i18n="branch_metro_dist">m</span></span>
                                 </div>
                             </div>
                         </div>
@@ -839,7 +910,7 @@
                     <div class="branch-card scroll-animate">
                         <div class="branch-img">
                             <img src="images/branch-2.png" alt="Drujba Branch">
-                            <div class="branch-tag">Drujba</div>
+                            <div class="branch-tag" data-i18n="branch2_tag">Drujba</div>
                         </div>
                         <div class="branch-info">
                             <h3>Ven's Drujba</h3>
@@ -850,12 +921,12 @@
                                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                         <circle cx="12" cy="10" r="3"></circle>
                                     </svg>
-                                    <span>Toshkent, Furkat ko'chasi, 171</span>
+                                    <span data-i18n="branch2_addr">Toshkent, Furkat ko'chasi, 171</span>
                                 </div>
                                 <div class="branch-metro">
                                     <div class="metro-icon icon-red">M</div>
-                                    <span>Xalqlar Do'stligi</span>
-                                    <span class="metro-dist">150 m</span>
+                                    <span data-i18n="metro_drujba">Xalqlar Do'stligi</span>
+                                    <span class="metro-dist">150 <span data-i18n="branch_metro_dist">m</span></span>
                                 </div>
                             </div>
                         </div>
@@ -881,20 +952,20 @@
         <div class="container">
             <div class="faq-wrapper">
                 <div class="faq-header scroll-animate">
-                    <h2>KO'P BERILADIGAN <br><span class="text-blue">SAVOLLAR</span></h2>
-                    <p>Ven's Academy o'quv markazi faoliyati haqidagi barcha savollarga javoblar</p>
+                    <h2 data-i18n="faq_title">KO'P BERILADIGAN <br><span class="text-blue">SAVOLLAR</span></h2>
+                    <p data-i18n="faq_desc">Ven's Academy o'quv markazi faoliyati haqidagi barcha savollarga javoblar</p>
                 </div>
                 <div class="faq-list">
                     <div class="faq-item scroll-animate">
                         <div class="faq-question">
-                            <span>O'qishni boshlash uchun nimalar talab qilinadi?</span>
+                            <span data-i18n="faq1_q">O'qishni boshlash uchun nimalar talab qilinadi?</span>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <path d="M6 9l6 6 6-6" />
                             </svg>
                         </div>
                         <div class="faq-answer">
-                            <p>ACCA dasturini o'rganish uchun asosan atamalar va masalalar mohiyatini tushunishga
+                            <p data-i18n="faq1_a">ACCA dasturini o'rganish uchun asosan atamalar va masalalar mohiyatini tushunishga
                                 yetadigan
                                 Pre-intermediate darajasidagi Ingliz tili talab etiladi. Shuningdek, o'rtacha darajada
                                 murakkab bo'lmagan amallarni bajara olish uchun matematika bilimlari kerak bo'ladi. Oliy
@@ -904,41 +975,41 @@
                     </div>
                     <div class="faq-item scroll-animate">
                         <div class="faq-question">
-                            <span>Online kurslar mavjudmi?</span>
+                            <span data-i18n="faq2_q">Online kurslar mavjudmi?</span>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <path d="M6 9l6 6 6-6" />
                             </svg>
                         </div>
                         <div class="faq-answer">
-                            <p>Ha, Ven's Academy o'quvchilar uchun qulaylik yaratish maqsadida ham online, ham offline
+                            <p data-i18n="faq2_a">Ha, Ven's Academy o'quvchilar uchun qulaylik yaratish maqsadida ham online, ham offline
                                 dars formatlarini taklif etadi.</p>
                         </div>
                     </div>
                     <div class="faq-item scroll-animate">
                         <div class="faq-question">
-                            <span>Chegirmalar yoki bo'lib to'lash imkoniyati bormi?</span>
+                            <span data-i18n="faq3_q">Chegirmalar yoki bo'lib to'lash imkoniyati bormi?</span>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <path d="M6 9l6 6 6-6" />
                             </svg>
                         </div>
                         <div class="faq-answer">
-                            <p>Ha, o'quv markazimizda kurs to'lovlarini bo'lib to'lash imkoniyati mavjud. Ayniqsa, TDIU
+                            <p data-i18n="faq3_a">Ha, o'quv markazimizda kurs to'lovlarini bo'lib to'lash imkoniyati mavjud. Ayniqsa, TDIU
                                 talabalari uchun maxsus chegirmali narxlar (subsidiya) doirasida o'qish taklif qilinadi.
                             </p>
                         </div>
                     </div>
                     <div class="faq-item scroll-animate">
                         <div class="faq-question">
-                            <span>Kursda ACCA ning qaysi paperlari o'qitiladi?</span>
+                            <span data-i18n="faq4_q">Kursda ACCA ning qaysi paperlari o'qitiladi?</span>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <path d="M6 9l6 6 6-6" />
                             </svg>
                         </div>
                         <div class="faq-answer">
-                            <p>Akademiyamizda ACCA ning F1 dan F9 gacha bo'lgan barcha paperlari (fanlari) bo'yicha
+                            <p data-i18n="faq4_a">Akademiyamizda ACCA ning F1 dan F9 gacha bo'lgan barcha paperlari (fanlari) bo'yicha
                                 sifatli ta'lim beriladi. Ular qatoriga F1 (Business and Technology), F2 (Management
                                 Accounting), F3 (Financial Accounting) va to F9 (Financial Management) gacha bo'lgan
                                 dasturlar kiradi.</p>
@@ -946,14 +1017,14 @@
                     </div>
                     <div class="faq-item scroll-animate">
                         <div class="faq-question">
-                            <span>Kursni yakunlagach ish topish imkoni qanday?</span>
+                            <span data-i18n="faq5_q">Kursni yakunlagach ish topish imkoni qanday?</span>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <path d="M6 9l6 6 6-6" />
                             </svg>
                         </div>
                         <div class="faq-answer">
-                            <p>Ven's Academy o'z talabalariga ish bilan ta'minlashga kafolat beradi. Darslar davomida
+                            <p data-i18n="faq5_a">Ven's Academy o'z talabalariga ish bilan ta'minlashga kafolat beradi. Darslar davomida
                                 o'quvchilar real keyslar bilan amaliy ishlaydilar. Bu xalqaro va mahalliy katta
                                 kompaniyalarda, jumladan, moliya direktori, auditor yoki biznes boshqaruvi eksperti
                                 sifatida ishlash imkonini beradi.</p>
@@ -961,14 +1032,14 @@
                     </div>
                     <div class="faq-item scroll-animate">
                         <div class="faq-question">
-                            <span>Kurslarga qanday yozilish mumkin?</span>
+                            <span data-i18n="faq6_q">Kurslarga qanday yozilish mumkin?</span>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <path d="M6 9l6 6 6-6" />
                             </svg>
                         </div>
                         <div class="faq-answer">
-                            <p>Kurslarimizga ro'yxatdan o'tish yoki to'liq ma'lumot olish uchun +998 90 822 15 25
+                            <p data-i18n="faq6_a">Kurslarimizga ro'yxatdan o'tish yoki to'liq ma'lumot olish uchun +998 90 822 15 25
                                 raqamiga qo'ng'iroq qilishingiz mumkin. Shuningdek, Telegram orqali @vens_academy_admin
                                 sahifasiga yozish orqali ham ma'lumot olishingiz mumkin.</p>
                         </div>
@@ -983,8 +1054,8 @@
             <div class="footer-wrapper">
                 <div class="footer-main">
                     <div class="footer-info">
-                        <h2>VEN'S ACADEMY — <br>KATTA IMKONIYATLAR SARI!</h2>
-                        <p>Har bir yosh Ven's Academyga vaqt va mablag'ni tejash, bilim olish va kelajagini qurish uchun
+                        <h2 data-i18n="footer_title">VEN'S ACADEMY — <br>KATTA IMKONIYATLAR SARI!</h2>
+                        <p data-i18n="footer_desc">Har bir yosh Ven's Academyga vaqt va mablag'ni tejash, bilim olish va kelajagini qurish uchun
                             keladi. Bizning maqsadimiz — sifatli ta'lim berish va ularga xalqaro imkoniyatlar eshigini
                             ochishdir.</p>
                     </div>
@@ -1050,12 +1121,9 @@
                 { name: "MALIKA USMONOVA", date: "05 March 2026", result: "91" },
                 { name: "DILSHOD RAHIMOV", date: "02 March 2026", result: "85" },
                 { name: "SHOHRUX ALIYEV", date: "25 February 2026", result: "72" },
-                { name: "NIGINA QOSIMOVA", date: "20 February 2026", result: "94" },
-                { name: "AZIZBEK TOHIROV", date: "18 February 2026", result: "68" },
-                { name: "SARVINOZ KARIMOVA", date: "15 February 2026", result: "82" },
-                { name: "UMID JALILOV", date: "10 February 2026", result: "61" },
-                { name: "SEVARA SHARIPOVA", date: "05 February 2026", result: "77" },
-                { name: "BEKZOD JUMAYEV", date: "01 February 2026", result: "89" },
+                { name: "AZIZBEK TO'LQINOV", date: "15 February 2026", result: "92" },
+                { name: "MALIKA AHMEDOVA", date: "12 February 2026", result: "88" },
+                { name: "SARDOR RAHIMOV", date: "05 February 2026", result: "79" },
                 { name: "LAYLO ISMOILOVA", date: "28 January 2026", result: "74" },
                 { name: "NODIR QODIROV", date: "25 January 2026", result: "86" },
                 { name: "ZUHRA HASANOVA", date: "20 January 2026", result: "93" },
@@ -1076,6 +1144,10 @@
                     const card = document.createElement('div');
                     card.className = 'achiever-card';
                     card.style.animationDelay = `${index * 0.05}s`;
+                    const currentSubLang = localStorage.getItem('preferredLang') || 'uz';
+                    const t = translations[currentSubLang] || translations['uz'];
+                    const resLabel = t.result_label || "Result";
+
                     card.innerHTML = `
                         <h3 class="achiever-name">${student.name}</h3>
                         <p class="achiever-date">${student.date}</p>
@@ -1084,7 +1156,7 @@
                         </div>
                         <div class="achiever-score">
                             <div class="glass-badge">
-                                <span>Result</span>
+                                <span>${resLabel}</span>
                                 <span class="score-val">${student.result}%</span>
                             </div>
                         </div>
@@ -1093,6 +1165,7 @@
                 });
             }
 
+            // Initial render
             renderAchievers(6);
 
             if (viewAllBtn) {
@@ -1108,40 +1181,101 @@
                     }
                 });
             }
+        });
+    </script>
 
-            // Instructors Accordion Logic
-            const instructorCards = document.querySelectorAll('.instructor-card');
-            instructorCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    // Remove active class from all
-                    instructorCards.forEach(c => c.classList.remove('active'));
-                    // Add active class to clicked card
-                    card.classList.add('active');
-                });
-            });
+    <!-- Language & Core Logic -->
+    <script src="translations.js"></script>
+    <script>
+        // --- Language Logic ---
+        const langSelector = document.getElementById('langSelector');
+        const currentLangSpan = document.getElementById('currentLang');
+        const langDropdownItems = document.querySelectorAll('.lang-dropdown li');
 
-            // Locations Card Logic
-            const branchCards = document.querySelectorAll('.branch-card');
-            const mapPins = document.querySelectorAll('.map-pin');
-
-            branchCards.forEach((card, index) => {
-                card.addEventListener('click', () => {
-                    // Update cards
-                    branchCards.forEach(c => c.classList.remove('active'));
-                    card.classList.add('active');
-
-                    // Update map pins
-                    mapPins.forEach(p => p.classList.remove('active'));
-                    if (mapPins[index]) {
-                        mapPins[index].classList.add('active');
+        function updateContent(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    const text = translations[lang][key];
+                    if (text.includes('<span') || text.includes('<br')) {
+                        el.innerHTML = text;
+                    } else {
+                        el.textContent = text;
                     }
-                });
+                }
+            });
+            updateCountdown(lang);
+        }
+
+        function switchLanguage(lang) {
+            localStorage.setItem('preferredLang', lang);
+            if (currentLangSpan) currentLangSpan.textContent = lang.toUpperCase();
+            document.documentElement.setAttribute('lang', lang);
+
+            langDropdownItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-lang') === lang) item.classList.add('active');
             });
 
-            const cards = document.querySelectorAll('.stat-card, .course-card');
-            let counted = false;
+            updateContent(lang);
+        }
 
-            const observer = new IntersectionObserver((entries) => {
+        if (langSelector) {
+            langSelector.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langSelector.classList.toggle('active');
+            });
+        }
+
+        document.addEventListener('click', () => {
+            if (langSelector) langSelector.classList.remove('active');
+        });
+
+        langDropdownItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const lang = item.getAttribute('data-lang');
+                switchLanguage(lang);
+            });
+        });
+
+        // --- Countdown Timer Logic ---
+        const targetDate = new Date("2026-04-14T00:00:00+05:00").getTime();
+
+        function updateCountdown(currentLang = 'uz') {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+            const timerEl = document.getElementById("countdown-timer");
+            if (!timerEl) return;
+
+            if (difference < 0) {
+                timerEl.innerHTML = "00:00:00";
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            const t = translations[currentLang] || translations['uz'];
+            const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+            timerEl.innerHTML = `${days} ${t.days}, ${formattedTime}`;
+        }
+
+        setInterval(() => {
+            const currentSubLang = localStorage.getItem('preferredLang') || 'uz';
+            updateCountdown(currentSubLang);
+        }, 1000);
+
+        // --- UI Interactions ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLang') || 'uz';
+            switchLanguage(savedLang);
+
+            // Statistics Counters
+            let counted = false;
+            const statsObserver = new IntersectionObserver((entries) => {
                 let anyVisible = false;
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1149,29 +1283,26 @@
                         anyVisible = true;
                     }
                 });
-
                 if (anyVisible && !counted) {
                     startCounters();
                     counted = true;
                 }
             }, { threshold: 0.1 });
 
-            cards.forEach(card => observer.observe(card));
+            document.querySelectorAll('.stat-card, .course-card').forEach(card => statsObserver.observe(card));
 
             function startCounters() {
                 const counters = document.querySelectorAll('.counter');
-                const duration = 2000;
-
                 counters.forEach(counter => {
-                    const target = parseInt(counter.getAttribute('data-count'), 10);
+                    const targetText = counter.getAttribute('data-count');
+                    const target = parseInt(targetText, 10);
+                    const duration = 2000;
                     const startTime = performance.now();
-
                     function updateCounter(currentTime) {
                         const elapsedTime = currentTime - startTime;
                         if (elapsedTime < duration) {
                             const progress = 1 - Math.pow(2, -10 * elapsedTime / duration);
-                            let currentVal = Math.floor(progress * target);
-                            counter.innerText = currentVal.toLocaleString('en-US');
+                            counter.innerText = Math.floor(progress * target).toLocaleString('en-US');
                             requestAnimationFrame(updateCounter);
                         } else {
                             counter.innerText = target.toLocaleString('en-US');
@@ -1181,74 +1312,83 @@
                 });
             }
 
+            // Scroll Animations
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+            document.querySelectorAll('.scroll-animate').forEach(el => scrollObserver.observe(el));
+
+            // ACCA Chart Animation
+            const chartSection = document.querySelector('.acca-chart');
+            if (chartSection) {
+                const chartObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                document.querySelectorAll('.acca-chart .bar').forEach(bar => {
+                                    const styleAttr = bar.getAttribute('style');
+                                    const match = styleAttr.match(/--h:\s*(\d+)%/);
+                                    if (match) bar.style.height = match[1] + '%';
+                                });
+                            }, 300);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                chartObserver.observe(chartSection);
+            }
+
+            // FAQ Accordion
             const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                question.addEventListener('click', () => {
+                item.querySelector('.faq-question').addEventListener('click', () => {
                     const isActive = item.classList.contains('active');
-                    // Close all
                     faqItems.forEach(i => i.classList.remove('active'));
-                    // Toggle current
                     if (!isActive) item.classList.add('active');
                 });
             });
 
-            // Mobile Hamburger Toggle
+            // Mobile Hamburger
             const hamburger = document.getElementById('hamburgerMenu');
-            const mainNav = document.querySelector('.main-nav');
-            if (hamburger) {
+            const mainNav = document.getElementById('mainNav');
+            if (hamburger && mainNav) {
                 hamburger.addEventListener('click', () => {
                     hamburger.classList.toggle('active');
                     mainNav.classList.toggle('active');
                 });
             }
 
-            // Global Scroll Animation Observer
-            const scrollAnimElems = document.querySelectorAll('.scroll-animate');
-            const scrollObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                    }
+            // Instructor Accordion
+            const instructorCards = document.querySelectorAll('.instructor-card');
+            instructorCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    instructorCards.forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
                 });
-            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+            });
 
-            scrollAnimElems.forEach(el => scrollObserver.observe(el));
+            // Locations logic
+            const branchCards = document.querySelectorAll('.branch-card');
+            const locTabs = document.querySelectorAll('.loc-tab');
+            const locContent = document.querySelector('.locations-content');
 
-            // --- ACCA STATISTICS CHART ANIMATION ---
-            const chartSection = document.querySelector('.acca-chart');
-            const bars = document.querySelectorAll('.acca-chart .bar');
+            branchCards.forEach((card) => {
+                card.addEventListener('click', () => {
+                    branchCards.forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                });
+            });
 
-            if (chartSection && bars.length > 0) {
-                const chartObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            // Delay slightly for better visual flow
-                            setTimeout(() => {
-                                bars.forEach(bar => {
-                                    const targetH = bar.getAttribute('style').match(/--h: (\d+%)/)[1];
-                                    bar.style.height = targetH;
-                                });
-                            }, 300);
-                            chartObserver.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.5 });
-
-                chartObserver.observe(chartSection);
-            }
-        });
-        // Mobile Locations Tabs Logic
-        const locTabs = document.querySelectorAll('.loc-tab');
-        const locContent = document.querySelector('.locations-content');
-
-        locTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                locTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                if (locContent) {
-                    locContent.setAttribute('data-mobile-view', tab.getAttribute('data-target'));
-                }
+            locTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    locTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    if (locContent) locContent.setAttribute('data-mobile-view', tab.getAttribute('data-target'));
+                });
             });
         });
     </script>

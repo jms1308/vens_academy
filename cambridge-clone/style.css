@@ -13,6 +13,25 @@
   box-sizing: border-box;
 }
 
+/* ===== PROMO BANNER ===== */
+.promo-banner {
+  background-color: #FACC15; /* Bright yellow from Ven's brand/accent */
+  color: #0F172A;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 999;
+  letter-spacing: -0.2px;
+}
+
+.promo-banner strong {
+  font-weight: 800;
+  color: #EB1C24; /* Urgent red */
+  margin: 0 4px;
+}
+
 body {
   font-family: var(--font-family);
   background-color: var(--bg-color);
@@ -166,27 +185,76 @@ nav.main-nav a:hover::before {
   justify-self: end;
 }
 
-/* Language selector pill */
+/* Language selector dropdown */
 .lang-selector {
+  position: relative;
+  z-index: 1000;
+}
+
+.lang-current {
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 8px 14px;
+  gap: 6px;
+  padding: 8px 16px;
   border-radius: 50px;
   border: 1.5px solid #E2E8F0;
   cursor: pointer;
   font-size: 0.85rem;
-  font-weight: 600;
-  color: #1D1D3A;
+  font-weight: 700;
+  color: #1E293B;
   background: white;
   transition: all 0.25s ease;
-  white-space: nowrap;
 }
 
-.lang-selector:hover {
+.lang-selector:hover .lang-current,
+.lang-selector.active .lang-current {
   border-color: #1A56DB;
   color: #1A56DB;
-  background: #F0F5FF;
+  background: #F8FAFF;
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: white;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 8px;
+  min-width: 140px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  overflow: hidden;
+}
+
+.lang-selector.active .lang-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.lang-dropdown li {
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #64748B;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-dropdown li:hover {
+  background: #F1F5F9;
+  color: #1A56DB;
+}
+
+.lang-dropdown li.active {
+  background: #EEF2FF;
+  color: #1A56DB;
 }
 
 .lang-selector svg {
@@ -231,7 +299,7 @@ nav.main-nav a:hover::before {
   align-items: center;
   justify-content: space-between;
   min-height: calc(85vh - 80px); /* Adjust for header height */
-  padding: 20px 0 60px 0; /* Reduced top padding */
+  padding: 80px 0 60px 0; /* Increased top padding for gap below menu */
   position: relative;
   gap: 40px;
 }
@@ -242,13 +310,19 @@ nav.main-nav a:hover::before {
   z-index: 10;
 }
 
-.hero h1 {
+.hero-title {
   font-size: clamp(2.8rem, 5vw, 4.8rem); /* Fluid Typography */
-  font-weight: 900;
-  color: #131238;
-  line-height: 1.05;
-  margin-bottom: 24px;
-  letter-spacing: -1.5px;
+  font-weight: 400; 
+  color: #0F172A;
+  line-height: 1.0; /* Increased from 0.9 to be less squeezed */
+  margin-bottom: 32px;
+  letter-spacing: -2.5px; /* Slightly relaxed from -3.5px */
+}
+
+.hero-subtitle {
+  color: #64748B;
+  font-weight: 400; 
+  letter-spacing: -2px; /* Slightly relaxed from -3px */
 }
 
 .hero p {
@@ -386,13 +460,15 @@ nav.main-nav a:hover::before {
   /* Tablet Hero Adjustments */
   .hero {
     min-height: auto;
-    padding: 40px 0 60px 0;
+    padding: 60px 0 60px 0;
     gap: 30px;
   }
 
-  .hero h1 {
+  .hero-title {
     font-size: clamp(2.2rem, 4vw, 3.2rem);
     margin-bottom: 20px;
+    letter-spacing: -1.5px;
+    line-height: 1.0;
   }
 
   .hero-content {
@@ -410,7 +486,7 @@ nav.main-nav a:hover::before {
   .hero {
     flex-direction: column;
     text-align: center;
-    padding: 20px 0 40px 0;
+    padding: 40px 0 40px 0;
     min-height: auto;
     gap: 40px;
   }
@@ -420,11 +496,11 @@ nav.main-nav a:hover::before {
     order: 1;
   }
 
-  .hero h1 {
+  .hero-title {
     font-size: clamp(2rem, 8vw, 2.5rem);
     line-height: 1.1;
     margin-bottom: 16px;
-    letter-spacing: -0.5px;
+    letter-spacing: -1px;
   }
 
   .hero p {
@@ -581,6 +657,86 @@ nav.main-nav a:hover::before {
   .stat-card {
     flex: 0 0 100%;
   }
+}
+
+
+/* Partners Ticker Section */
+.partners-ticker-section {
+  padding: 60px 0 40px 0;
+  background-color: #ffffff;
+  overflow: hidden;
+  border-top: 1px solid #f1f5f9;
+}
+
+.ticker-title {
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #64748B;
+  letter-spacing: 3px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  position: relative;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ticker-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background-color: #3b82f6; /* Blue accent underline */
+  border-radius: 2px;
+}
+
+.ticker-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  /* Soft fade effect on edges */
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  /* Left to Right animation */
+  animation: scroll-right 50s linear infinite;
+  gap: 100px;
+  align-items: center;
+}
+
+.ticker-item {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #0F172A;
+  opacity: 0.3;
+  white-space: nowrap;
+  letter-spacing: 1.5px;
+  transition: opacity 0.3s ease;
+  user-select: none;
+}
+
+.ticker-item:hover {
+  opacity: 0.7;
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@media (max-width: 768px) {
+  .partners-ticker-section { padding: 40px 0 30px 0; }
+  .ticker-title { margin-bottom: 30px; letter-spacing: 2px; font-size: 0.65rem; }
+  .ticker-track { gap: 60px; animation-duration: 35s; }
+  .ticker-item { font-size: 1.1rem; }
 }
 
 /* Pain Points Section */
@@ -1207,12 +1363,32 @@ nav.main-nav a:hover::before {
   left: 30px;
   font-size: 1.5rem;
   color: #9CA3AF;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.signup-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1A56DB;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.4s ease;
+  margin-right: 0;
 }
 
 .course-card:hover .course-arrow {
   color: #1A56DB;
-  transform: translateX(8px);
+}
+
+.course-card:hover .signup-text {
+  max-width: 150px;
+  opacity: 1;
+  margin-right: 12px;
 }
 
 @media (max-width: 968px) {
@@ -2416,6 +2592,16 @@ nav.main-nav a:hover::before {
   .course-desc { font-size: 0.85rem; }
   
   .course-target { font-size: 0.8rem; margin-bottom: 0; }
+
+  .course-card .signup-text {
+    max-width: 150px;
+    opacity: 1;
+    margin-right: 10px;
+  }
+  
+  .course-card .course-arrow {
+    color: #1A56DB;
+  }
   
   /* Arrow positioning */
   .course-arrow {
