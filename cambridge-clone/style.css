@@ -1368,8 +1368,24 @@ nav.main-nav a:hover::before {
   font-size: 0.9rem;
   color: #6B7280;
   line-height: 1.5;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   margin-top: auto;
+}
+
+.course-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.course-price span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #6B7280;
 }
 
 .course-arrow {
@@ -3129,4 +3145,125 @@ nav.main-nav a:hover::before {
   .y-labels { width: 30px; font-size: 0.7rem; }
 }
 
+/* ===== WORKING STUDENTS SECTION ===== */
+.working-students-section {
+  padding: 80px 0 20px 0;
+  background-color: #ffffff;
+  overflow: hidden;
+}
 
+.ws-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.ws-header h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: #121A3B;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.ws-header p {
+  font-size: 1.05rem;
+  color: #6B7280;
+  margin-top: 15px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ws-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  /* Soft fade effect on edges */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  padding: 20px 0;
+}
+
+.ws-track {
+  display: flex;
+  width: max-content;
+  /* Left to Right animation */
+  animation: scroll-left-ws 40s linear infinite;
+  gap: 24px;
+  padding-left: 24px;
+}
+
+.ws-track:hover {
+  animation-play-state: paused;
+}
+
+.ws-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #FFFFFF;
+  border: 1px solid #F1F5F9;
+  border-radius: 16px;
+  padding: 24px 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  min-width: 300px;
+  cursor: default;
+}
+
+.ws-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
+  border-color: #E2E8F0;
+}
+
+.ws-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: white;
+  flex-shrink: 0;
+  background-color: #1A56DB; /* Default blue, can be overridden by inline style */
+}
+
+.ws-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.ws-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 4px;
+}
+
+.ws-company {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@keyframes scroll-left-ws {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 12px)); }
+}
+
+@media (max-width: 768px) {
+  .working-students-section { padding: 60px 0 10px 0; }
+  .ws-header { margin-bottom: 30px; }
+  .ws-card { min-width: 260px; padding: 20px 24px; gap: 12px; }
+  .ws-name { font-size: 0.95rem; }
+  .ws-company { font-size: 0.85rem; }
+  .ws-icon { width: 44px; height: 44px; font-size: 1rem; border-radius: 10px; }
+  .ws-track { animation-duration: 30s; }
+}
