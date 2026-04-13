@@ -133,7 +133,14 @@ const translations = {
         footer_company_title: "Markaz",
         footer_contact_title: "Bog'laning",
         footer_address: "Toshkent sh., Chilonzor tumani, Bunyodkor ko'chasi, 42-uy",
-        footer_all_rights: "Barcha huquqlar himoyalangan."
+        footer_all_rights: "Barcha huquqlar himoyalangan.",
+        modal_title: "Ro'yxatdan o'tish",
+        form_name: "Ism va familiya",
+        form_phone: "Telefon raqami",
+        form_submit: "Yuborish",
+        form_success: "Rahmat! Tez orada siz bilan bog'lanamiz.",
+        form_placeholder_name: "Ism va familiyangizni kiriting",
+        form_placeholder_phone: "+998 90 123 45 67"
     },
     ru: {
         promo_text: "До закрытия приема осталось:",
@@ -269,6 +276,13 @@ const translations = {
         footer_company_title: "Центр",
         footer_contact_title: "Контакты",
         footer_address: "г. Ташкент, Чиланзарский р-н, ул. Бунёдкор, 42",
-        footer_all_rights: "Все права защищены."
+        footer_all_rights: "Все права защищены.",
+        modal_title: "Регистрация",
+        form_name: "ФИО",
+        form_phone: "Номер телефона",
+        form_submit: "Отправить",
+        form_success: "Спасибо! Мы свяжемся с вами в ближайшее время.",
+        form_placeholder_name: "Введите ваше ФИО",
+        form_placeholder_phone: "+998 90 123 45 67"
     }
 };
