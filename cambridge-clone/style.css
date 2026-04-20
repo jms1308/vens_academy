@@ -3459,3 +3459,206 @@ nav.main-nav a:hover::before {
     font-size: 1.5rem;
   }
 }
+
+/* Enrollment Section */
+.enrollment-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.enrollment-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.enrollment-content .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.enrollment-content .section-desc {
+    font-size: 1.15rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.enrollment-features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.e-feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 1.05rem;
+}
+
+.ef-icon {
+    width: 28px;
+    height: 28px;
+    background: rgba(30, 184, 252, 0.1);
+    color: var(--primary-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.enrollment-form-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.enrollment-section .registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.enrollment-section .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.enrollment-section label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.enrollment-section input {
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 1.5px solid #E2E8F0;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.enrollment-section input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 4px rgba(30, 184, 252, 0.1);
+}
+
+.btn-block {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.enrollment-success {
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 992px) {
+    .enrollment-wrapper {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .enrollment-content {
+        text-align: center;
+    }
+    
+    .enrollment-features {
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .enrollment-section {
+        padding: 60px 0;
+    }
+    .enrollment-form-container {
+        padding: 30px 20px;
+    }
+}
+
+/* Premium Button for Enrollment */
+.enrollment-section .btn-primary {
+    background: linear-gradient(135deg, var(--primary-blue), #0056D2);
+    color: white;
+    border: none;
+    height: 60px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(30, 184, 252, 0.2);
+}
+
+.enrollment-section .btn-primary:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(30, 184, 252, 0.4);
+    background: linear-gradient(135deg, #33C5FF, var(--primary-blue));
+}
+
+.enrollment-section .btn-primary svg {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.enrollment-section .btn-primary:hover svg {
+    transform: translate(8px, -4px) rotate(-15deg);
+}
+
+.enrollment-section .btn-primary:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+/* Achiever Paper Badge */
+.achiever-card {
+    position: relative;
+}
+
+.achiever-paper-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(30, 184, 252, 0.1);
+    color: var(--primary-blue);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    z-index: 2;
+    border: 1px solid rgba(30, 184, 252, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.achiever-card:hover .achiever-paper-badge {
+    background: var(--primary-blue);
+    color: white;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}

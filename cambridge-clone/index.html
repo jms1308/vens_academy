@@ -1074,6 +1074,63 @@
         </div>
     </section>
 
+    <!-- Enrollment Section -->
+    <section id="enrollment" class="enrollment-section scroll-animate">
+        <div class="container">
+            <div class="enrollment-wrapper">
+                <div class="enrollment-content">
+                    <h2 class="section-title" data-i18n="modal_title">Ro'yxatdan o'tish</h2>
+                    <p class="section-desc" data-i18n="work_students_desc">Muvaffaqiyatli bitiruvchilarimiz nufuzli kompaniyalarda o'z faoliyatlarini davom ettirmoqdalar</p>
+                    <div class="enrollment-features">
+                        <div class="e-feature">
+                            <div class="ef-icon">✓</div>
+                            <span data-i18n="adv_card1_title">Yuqori natijadorlik</span>
+                        </div>
+                        <div class="e-feature">
+                            <div class="ef-icon">✓</div>
+                            <span data-i18n="adv_card3_title">Individual yondashuv</span>
+                        </div>
+                        <div class="e-feature">
+                            <div class="ef-icon">✓</div>
+                            <span data-i18n="why_item5_v">Ishga Kafolat</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="enrollment-form-container">
+                    <form id="mainEnrollmentForm" class="registration-form">
+                        <div class="input-group">
+                            <label for="enrollName" data-i18n="form_name">Ism va familiya</label>
+                            <input type="text" id="enrollName" name="fullName" required
+                                data-i18n-placeholder="form_placeholder_name" placeholder="Ism va familiyangizni kiriting">
+                        </div>
+                        <div class="input-group">
+                            <label for="enrollPhone" data-i18n="form_phone">Telefon raqami</label>
+                            <input type="tel" id="enrollPhone" name="phoneNumber" required
+                                data-i18n-placeholder="form_placeholder_phone" placeholder="+998 90 123 45 67">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span data-i18n="form_submit">Yuborish</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </form>
+                    <div id="enrollSuccess" class="enrollment-success" style="display: none;">
+                        <div class="success-icon-wrapper">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3 data-i18n="form_success">Rahmat! Tez orada siz bilan bog'lanamiz.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="main-footer">
         <div class="container">
             <div class="footer-wrapper">
@@ -1138,23 +1195,23 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const topAchievers = [
-                { name: "ANVARBEK MURADOV", date: "01 April 2026", result: "84" },
-                { name: "XONDAMIR MIRZOXIDOV", date: "28 March 2026", result: "81" },
-                { name: "SOBIRJON SOBITJONOV", date: "18 March 2026", result: "57" },
-                { name: "GULNOZA TOSHMATOVA", date: "15 March 2026", result: "88" },
-                { name: "RUSTAM NORMATOV", date: "12 March 2026", result: "79" },
-                { name: "JASUR ABDULLAYEV", date: "10 March 2026", result: "65" },
-                { name: "MALIKA USMONOVA", date: "05 March 2026", result: "91" },
-                { name: "DILSHOD RAHIMOV", date: "02 March 2026", result: "85" },
-                { name: "SHOHRUX ALIYEV", date: "25 February 2026", result: "72" },
-                { name: "AZIZBEK TO'LQINOV", date: "15 February 2026", result: "92" },
-                { name: "MALIKA AHMEDOVA", date: "12 February 2026", result: "88" },
-                { name: "SARDOR RAHIMOV", date: "05 February 2026", result: "79" },
-                { name: "LAYLO ISMOILOVA", date: "28 January 2026", result: "74" },
-                { name: "NODIR QODIROV", date: "25 January 2026", result: "86" },
-                { name: "ZUHRA HASANOVA", date: "20 January 2026", result: "93" },
-                { name: "FARHOD MAHMUDOV", date: "15 January 2026", result: "66" },
-                { name: "ODINA SAIDOVA", date: "10 January 2026", result: "80" }
+                { name: "ANVARBEK MURADOV", paper: "FA", result: "84", date: "01/04/2026" },
+                { name: "XONDAMIR MIRZOXIDOV", paper: "FA", result: "81", date: "28/03/2026" },
+                { name: "SOBIRJON SOBITJONOV", paper: "FA", result: "57", date: "18/03/2026" },
+                { name: "ZUMRAD ARTIQBOYEVA", paper: "FA", result: "91", date: "18/03/2026" },
+                { name: "ABBOSBEK RAJABOV", paper: "FA", result: "85", date: "28/02/2026" },
+                { name: "ABROR UMRZOQOV", paper: "FA", result: "85", date: "07/03/2026" },
+                { name: "AZIZA GOFUROVA", paper: "FA", result: "74", date: "11/03/2026" },
+                { name: "SARDOR QUDRATILLOYEV", paper: "FA", result: "59", date: "07/03/2026" },
+                { name: "YAKHYO YULDOSHEV", paper: "FA", result: "62", date: "18/02/2026" },
+                { name: "DAVRONBEK RUSTAMOV", paper: "FA", result: "59", date: "20/12/2025" },
+                { name: "CHINGIZ TOSHMURODOV", paper: "FA", result: "65", date: "20/12/2025" },
+                { name: "ADHAM NIZOMOV", paper: "MA", result: "82", date: "20/12/2025" },
+                { name: "JAVOHIR NOSIRJONOV", paper: "FA", result: "69", date: "21/06/2025" },
+                { name: "MIRJALOL KHAYDAROV", paper: "FA", result: "84", date: "08/03/2025" },
+                { name: "MEHRIDDIN DEHQONOV", paper: "FA", result: "81", date: "21/12/2024" },
+                { name: "ZULFIZAR OZODOVA", paper: "FA", result: "84", date: "08/06/2024" },
+                { name: "SHOKHJAKHON ERKINOV", paper: "MA", result: "75", date: "06/06/2023" }
             ];
 
             const grid = document.getElementById('achieversGrid');
@@ -1175,6 +1232,7 @@
                     const resLabel = t.result_label || "Result";
 
                     card.innerHTML = `
+                        <div class="achiever-paper-badge">${student.paper}</div>
                         <h3 class="achiever-name">${student.name}</h3>
                         <p class="achiever-date">${student.date}</p>
                         <div class="cert-image-wrapper">
@@ -1478,13 +1536,70 @@
             const currentLang = localStorage.getItem('preferredLang') || 'uz';
             updateContent(currentLang);
 
-            // Registration Modal Logic
+
+            // Enrollment Scrolling Logic
+            const regButtons = document.querySelectorAll('.btn-signup, .signup-btn, .course-arrow, .signup-text, .course-card');
+            const enrollmentSection = document.getElementById('enrollment');
+
+            function scrollToEnrollment(e) {
+                if (e) e.preventDefault();
+                if (enrollmentSection) {
+                    enrollmentSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+
+            regButtons.forEach(btn => btn.addEventListener('click', scrollToEnrollment));
+
+            // Main Enrollment Form Logic
+            const mainEnrollForm = document.getElementById('mainEnrollmentForm');
+            const enrollSuccess = document.getElementById('enrollSuccess');
+
+            if (mainEnrollForm) {
+                mainEnrollForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    // Simulate form submission
+                    mainEnrollForm.style.display = 'none';
+                    if (enrollSuccess) {
+                        enrollSuccess.style.display = 'flex';
+                    }
+                });
+            }
+
+            // Phone Input Auto-Prefix (+998)
+            const phoneInputs = document.querySelectorAll('#enrollPhone, #phoneNumber');
+            phoneInputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    if (!this.value || this.value.trim() === '') {
+                        this.value = '+998 ';
+                    }
+                });
+
+                input.addEventListener('input', function() {
+                    if (!this.value.startsWith('+998')) {
+                        // Ensure it always starts with +998
+                        const digits = this.value.replace(/\D/g, '');
+                        if (digits.startsWith('998')) {
+                            this.value = '+' + digits.substring(0, 3) + ' ' + digits.substring(3);
+                        } else {
+                            this.value = '+998 ' + digits;
+                        }
+                    }
+                });
+                
+                input.addEventListener('keydown', function(e) {
+                    // Prevent deleting the prefix
+                    if (e.key === 'Backspace' && this.value.length <= 5) {
+                        e.preventDefault();
+                    }
+                });
+            });
+
+            // Fallback: Registration Modal Logic (Keep for other triggers if any)
             const modal = document.getElementById('registrationModal');
             const closeModalBtn = document.getElementById('closeModal');
             const regForm = document.getElementById('registrationForm');
             const formContainer = document.getElementById('modalFormContainer');
             const successContainer = document.getElementById('modalSuccessContainer');
-            const regButtons = document.querySelectorAll('.btn-signup, .signup-btn, .course-arrow, .signup-text, .course-card');
 
             function openModal(e) {
                 if (e) e.preventDefault();
@@ -1492,36 +1607,32 @@
                 document.body.style.overflow = 'hidden';
                 formContainer.style.display = 'block';
                 successContainer.style.display = 'none';
-                regForm.reset();
+                if (regForm) regForm.reset();
             }
 
             function closeModal() {
-                modal.classList.remove('active');
+                if (modal) modal.classList.remove('active');
                 document.body.style.overflow = '';
             }
 
-            regButtons.forEach(btn => btn.addEventListener('click', openModal));
-            closeModalBtn.addEventListener('click', closeModal);
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) closeModal();
-            });
+            if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) closeModal();
+                });
+            }
 
             document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+                if (e.key === 'Escape' && modal && modal.classList.contains('active')) closeModal();
             });
 
             if (regForm) {
                 regForm.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    // Simulate API call
                     formContainer.style.display = 'none';
                     successContainer.style.display = 'flex';
-                    
-                    // Auto close modal after 3 seconds
                     setTimeout(() => {
-                        if (modal.classList.contains('active')) {
-                            closeModal();
-                        }
+                        if (modal && modal.classList.contains('active')) closeModal();
                     }, 3000);
                 });
             }
