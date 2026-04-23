@@ -1509,29 +1509,21 @@
             const mainEnrollForm = document.getElementById('mainEnrollmentForm');
             const enrollSuccess = document.getElementById('enrollSuccess');
 
-            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx8-xRUoMSrb7i71QL2RJkOHqNFAUBb693VGfEK2_hIZc_z2eAuxHguZH2k8zU3bdCJnQ/exec";
+            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzxefrut-qCC81LrY5zbloMH3VJ92wMJRYUVpUpf_yCz2VxBk0djX_GQMKaUiV4BwNz-g/exec";
 
             const sendToVensAcademy = async (name, phone) => {
-                const data = {
-                    name: name,
-                    phone: phone
-                };
+                // Faqat raqamlarni olib qolamiz (masalan, +998 90... o'rniga 99890...)
+                const cleanPhone = phone.replace(/\D/g, '');
+                const urlWithParams = `${SCRIPT_URL}?ism=${encodeURIComponent(name)}&tel=${cleanPhone}`;
 
-                try {
-                    // Diqqat: Google Apps Script POST uchun 'text/plain' ishlatish xatolarni kamaytiradi
-                    await fetch(SCRIPT_URL, {
-                        method: "POST",
-                        mode: "no-cors", 
-                        headers: {
-                            "Content-Type": "text/plain", 
-                        },
-                        body: JSON.stringify(data),
-                    });
+                // So'rovni yuboramiz va natijani kutib o'tirmaymiz (foydalanuvchini kuttirmaslik uchun tez ishlashi uchun)
+                fetch(urlWithParams, {
+                    method: 'GET',
+                    mode: 'no-cors'
+                }).catch(err => console.error("Tarmoq xatosi:", err));
 
-                    console.log("Xabar yuborildi! Sheet1-ni tekshiring.");
-                } catch (error) {
-                    console.error("Xatolik:", error);
-                }
+                // Loading ("Yuborilmoqda...") holatini ko'rsatish uchun sun'iy 3 soniya kutamiz
+                return new Promise(resolve => setTimeout(resolve, 3000));
             };
 
             if (mainEnrollForm) {
@@ -1621,10 +1613,28 @@
             });
 
             if (regForm) {
-                regForm.addEventListener('submit', (e) => {
+                regForm.addEventListener('submit', async (e) => {
                     e.preventDefault();
+                    
+                    const submitBtn = regForm.querySelector('button[type="submit"]');
+                    const originalBtnText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = 'Yuborilmoqda...';
+                    submitBtn.disabled = true;
+
+                    const nameInput = document.getElementById('fullName').value;
+                    const phoneInput = document.getElementById('phoneNumber').value;
+
+                    await sendToVensAcademy(nameInput, phoneInput);
+
                     formContainer.style.display = 'none';
-                    successContainer.style.display = 'flex';
+                    if (successContainer) {
+                        successContainer.style.display = 'flex';
+                    }
+                    
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                    regForm.reset();
+
                     setTimeout(() => {
                         if (modal && modal.classList.contains('active')) closeModal();
                     }, 3000);
