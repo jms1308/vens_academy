@@ -3152,10 +3152,29 @@ nav.main-nav a:hover::before {
 }
 
 @media (max-width: 768px) {
-  .acca-chart { height: 280px; }
-  .bars { height: 250px; gap: 4px; }
-  .bar { width: 22px; }
-  .y-labels { width: 30px; font-size: 0.7rem; }
+  .acca-chart { height: 260px; }
+  .bars { height: 220px; gap: 3px; }
+  .bar { width: 18px; border-radius: 6px 6px 2px 2px;}
+  .paper-label { font-size: 0.75rem; letter-spacing: 0; }
+  .y-labels { width: 25px; font-size: 0.65rem; }
+  
+  .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    font-size: 9px;
+    padding: 2px 4px;
+    top: -20px;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  .tooltip::after {
+    bottom: -3px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 3px solid #0f172a;
+  }
 }
 
 /* ===== WORKING STUDENTS SECTION ===== */
@@ -3201,8 +3220,6 @@ nav.main-nav a:hover::before {
 .ws-track {
   display: flex;
   width: max-content;
-  /* Left to Right animation */
-  animation: scroll-left-ws 40s linear infinite;
   gap: 24px;
   padding-left: 24px;
 }
@@ -3292,18 +3309,44 @@ nav.main-nav a:hover::before {
 }
 
 @keyframes scroll-left-ws {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-50% - 12px)); }
+  /* Removed - handled by JS */
 }
 
 @media (max-width: 768px) {
   .working-students-section { padding: 60px 0 10px 0; }
   .ws-header { margin-bottom: 30px; }
-  .ws-card { min-width: 260px; padding: 20px 24px; gap: 12px; }
+  .ws-carousel-wrapper { 
+    overflow-x: auto; 
+    padding: 20px 0;
+    scroll-behavior: auto; /* Changed to auto for JS control */
+    -webkit-overflow-scrolling: touch;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .ws-card { 
+    min-width: 280px; 
+    padding: 20px 24px; 
+    gap: 12px; 
+    margin-right: 16px;
+    scroll-snap-align: none;
+  }
   .ws-name { font-size: 0.95rem; }
   .ws-company { font-size: 0.85rem; }
   .ws-icon { width: 44px; height: 44px; font-size: 1rem; border-radius: 10px; }
-  .ws-track { animation-duration: 30s; }
+  .ws-track { 
+    animation: none; 
+    padding: 0 20px;
+    width: max-content;
+  }
+  .mobile-only {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-only {
+    display: none;
+  }
 }
 
 /* ===== REGISTRATION MODAL ===== */

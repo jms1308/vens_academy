@@ -174,22 +174,22 @@
             <div class="stats-grid">
                 <div class="stat-card blue-hover scroll-animate">
                     <span class="stat-dot dot-blue"></span>
-                    <h3 class="stat-number"><span class="counter" data-count="4">0</span>+</h3>
+                    <h3 class="stat-number"><span class="counter" data-count="5">0</span>+</h3>
                     <p class="stat-text" data-i18n="stat_experience">Yillik tajriba</p>
                 </div>
                 <div class="stat-card red-hover scroll-animate">
                     <span class="stat-dot dot-red"></span>
-                    <h3 class="stat-number"><span class="counter" data-count="300">0</span>+</h3>
+                    <h3 class="stat-number"><span class="counter" data-count="500">0</span>+</h3>
                     <p class="stat-text" data-i18n="stat_students">ACCA o'rganuvchilari</p>
                 </div>
                 <div class="stat-card yellow-hover scroll-animate">
                     <span class="stat-dot dot-yellow"></span>
-                    <h3 class="stat-number"><span class="counter" data-count="80">0</span>%</h3>
+                    <h3 class="stat-number"><span class="counter" data-count="82">0</span>%</h3>
                     <p class="stat-text" data-i18n="stat_pass_rate">O'tish darajasi</p>
                 </div>
                 <div class="stat-card green-hover scroll-animate">
                     <span class="stat-dot dot-green"></span>
-                    <h3 class="stat-number"><span class="counter" data-count="50">0</span>+</h3>
+                    <h3 class="stat-number"><span class="counter" data-count="70">0</span>+</h3>
                     <p class="stat-text" data-i18n="stat_achievers">Top Achieverlar</p>
                 </div>
             </div>
@@ -772,7 +772,8 @@
                             </div>
                             <div class="inst-bento-card">
                                 <span class="inst-bento-value" data-i18n="inst1_diploma">Diploma</span>
-                                <span class="inst-bento-label" data-i18n="inst1_diploma_label">Oxford Brookes university</span>
+                                <span class="inst-bento-label" data-i18n="inst1_diploma_label">Oxford Brookes
+                                    university</span>
                             </div>
                             <div class="inst-bento-card">
                                 <span class="inst-bento-value">4+</span>
@@ -1257,6 +1258,52 @@
 
                 const wstrackContent = renderWsCards(workingStudents);
                 wsTrack.innerHTML = wstrackContent + wstrackContent; // Duplicated once for seamless loop
+
+                // JS Ticker Logic
+                const wsWrapper = document.querySelector('.ws-carousel-wrapper');
+                let scrollPos = 0;
+                let isPaused = false;
+                let scrollAmount = 0.6; // speed in pixels per frame
+
+                function step() {
+                    if (!isPaused && wsWrapper) {
+                        scrollPos += scrollAmount;
+                        // Since items are duplicated, reset when we reach half
+                        if (scrollPos >= wsTrack.scrollWidth / 2) {
+                            scrollPos = 0;
+                        }
+                        wsWrapper.scrollLeft = scrollPos;
+                    }
+                    requestAnimationFrame(step);
+                }
+
+                if (wsWrapper) {
+                    // Pause on desktop hover
+                    wsWrapper.addEventListener('mouseenter', () => isPaused = true);
+                    wsWrapper.addEventListener('mouseleave', () => {
+                        isPaused = false;
+                        scrollPos = wsWrapper.scrollLeft;
+                    });
+
+                    // Manual scroll/touch handling
+                    wsWrapper.addEventListener('touchstart', () => isPaused = true);
+                    wsWrapper.addEventListener('touchend', () => {
+                        // Delay resuming to allow user to view after swipe
+                        setTimeout(() => {
+                            isPaused = false;
+                            scrollPos = wsWrapper.scrollLeft;
+                        }, 2000);
+                    });
+
+                    // Keep scrollPos in sync if user scrolls manually
+                    wsWrapper.addEventListener('scroll', () => {
+                        if (isPaused) {
+                            scrollPos = wsWrapper.scrollLeft;
+                        }
+                    });
+
+                    requestAnimationFrame(step);
+                }
             }
         });
     </script>
@@ -1529,7 +1576,7 @@
             if (mainEnrollForm) {
                 mainEnrollForm.addEventListener('submit', async (e) => {
                     e.preventDefault();
-                    
+
                     const submitBtn = mainEnrollForm.querySelector('button[type="submit"]');
                     const originalBtnText = submitBtn.innerHTML;
                     submitBtn.innerHTML = 'Yuborilmoqda...';
@@ -1544,7 +1591,7 @@
                     if (enrollSuccess) {
                         enrollSuccess.style.display = 'flex';
                     }
-                    
+
                     submitBtn.innerHTML = originalBtnText;
                     submitBtn.disabled = false;
                     mainEnrollForm.reset();
@@ -1615,7 +1662,7 @@
             if (regForm) {
                 regForm.addEventListener('submit', async (e) => {
                     e.preventDefault();
-                    
+
                     const submitBtn = regForm.querySelector('button[type="submit"]');
                     const originalBtnText = submitBtn.innerHTML;
                     submitBtn.innerHTML = 'Yuborilmoqda...';
@@ -1630,7 +1677,7 @@
                     if (successContainer) {
                         successContainer.style.display = 'flex';
                     }
-                    
+
                     submitBtn.innerHTML = originalBtnText;
                     submitBtn.disabled = false;
                     regForm.reset();
