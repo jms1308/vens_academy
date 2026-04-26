@@ -2718,11 +2718,11 @@ nav.main-nav a:hover::before {
     justify-content: flex-start; 
   }
   .achiever-name { font-size: 1.4rem; font-weight: 900; line-height: 1.2; text-transform: uppercase; margin-bottom: 8px; }
-  .achiever-date { font-size: 1rem; color: #6B7280; margin-bottom: 0; font-weight: 500; }
+  .achiever-date { display: none; }
   
   .cert-image-wrapper { 
     height: 250px; 
-    margin-top: 30px;
+    margin-top: 60px;
     transform: rotate(-10deg) scale(1.1) translateY(10px) translateX(20px); 
     display: flex;
     justify-content: center;
@@ -2955,9 +2955,6 @@ nav.main-nav a:hover::before {
 
   .achievers-grid {
     grid-template-columns: 1fr;
-  }
-  .achiever-date {
-    display: none;
   }
   .stats-grid {
     grid-template-columns: 1fr 1fr;
