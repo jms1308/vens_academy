@@ -1,10 +1,6 @@
 const translations = {
     uz: {
-        promo_text: "Qabul yopilishiga qoldi:",
-        days: "kun",
-        hours: "soat",
-        minutes: "daqiqa",
-        seconds: "soniya",
+
         nav_courses: "Kurslar",
         nav_results: "Natijalar",
         nav_instructors: "Ustozlarimiz",
@@ -31,7 +27,7 @@ const translations = {
         solution_badge: "YECHIM",
         solution_title: "Vens Academy",
         adv_card1_title: "Yuqori natijadorlik",
-        adv_card1_desc: "Markaz 2017-yildan beri faoliyat yuritadi. Eng muhim ko'rsatkichlaridan biri shuki, talabalarning imtihondan o'tish darajasi 94% ni tashkil qiladi.",
+        adv_card1_desc: "Markaz 2017-yildan beri faoliyat yuritadi. Eng muhim ko'rsatkichlaridan biri shuki, talabalarning imtihondan o'tish darajasi 82% ni tashkil qiladi.",
         adv_card2_title: "Kuchli mutaxassislar va qat'iy tayyorgarlik",
         adv_card2_desc: "Darslar faqat yuqori malakali ustozlar tomonidan o'tiladi. O'qitish nazariy emas, balki real imtihon savollari va amaliy misollarga asoslanadi.",
         adv_card3_title: "Individual yondashuv va kichik guruhlar",
@@ -110,7 +106,7 @@ const translations = {
         faq2_q: "Online kurslar mavjudmi?",
         faq2_a: "Ha, Ven's Academy o'quvchilar uchun qulaylik yaratish maqsadida ham online, ham offline dars formatlarini taklif etadi.",
         faq3_q: "Chegirmalar yoki bo'lib to'lash imkoniyati bormi?",
-        faq3_a: "Ha, o'quv markazimizda kurs to'lovlarini bo'lib to'lash imkoniyati mavjud. Ayniqsa, TDIU talabalari uchun maxsus chegirmali narxlar mavjud.",
+        faq3_a: "Ha, o'quv markazimizda kurs to'lovlarini bo'lib to'lash imkoniyati mavjud. Do'stlarini taklif qilganlarga esa maxsus chegirmalar bor",
         faq4_q: "Kursda ACCA ning qaysi paperlari o'qitiladi?",
         faq4_a: "Akademiyamizda ACCA ning F1 dan F9 gacha bo'lgan barcha paperlari (fanlari) bo'yicha sifatli ta'lim beriladi.",
         faq5_q: "Kursni yakunlagach ish topish imkoni qanday?",
@@ -146,11 +142,7 @@ const translations = {
         form_placeholder_phone: "+998 90 123 45 67"
     },
     ru: {
-        promo_text: "До закрытия приема осталось:",
-        days: "дней",
-        hours: "часов",
-        minutes: "минут",
-        seconds: "секунд",
+
         nav_courses: "Курсы",
         nav_results: "Результаты",
         nav_instructors: "Преподаватели",
@@ -177,7 +169,7 @@ const translations = {
         solution_badge: "РЕШЕНИЕ",
         solution_title: "Vens Academy",
         adv_card1_title: "Высокая результативность",
-        adv_card1_desc: "Центр работает с 2017 года. Один из важнейших показателей — уровень сдачи экзаменов студентами составляет 94%.",
+        adv_card1_desc: "Центр работает с 2017 года. Один из важнейших показателей — уровень сдачи экзаменов студентами составляет 82%.",
         adv_card2_title: "Сильные эксперты и строгая подготовка",
         adv_card2_desc: "Занятия проводят только высококвалифицированные наставники. Обучение основано на реальных заданиях и примерах.",
         adv_card3_title: "Индивидуальный подход и малые группы",

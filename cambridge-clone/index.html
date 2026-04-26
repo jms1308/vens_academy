@@ -11,12 +11,7 @@
 </head>
 
 <body>
-    <div class="promo-banner">
-        <div class="container">
-            <span><span data-i18n="promo_text">Qabul yopilishiga qoldi:</span> <strong id="countdown-timer">5 kun,
-                    00:00:00</strong></span>
-        </div>
-    </div>
+
     <div class="container">
         <header>
             <!-- Logo -->
@@ -747,7 +742,7 @@
                                     university</span>
                             </div>
                             <div class="inst-bento-card">
-                                <span class="inst-bento-value">4+</span>
+                                <span class="inst-bento-value">5+</span>
                                 <span class="inst-bento-label" data-i18n="inst_years_label">Yillik tajriba</span>
                             </div>
                         </div>
@@ -772,7 +767,7 @@
                                 <span class="inst-bento-label" data-i18n="inst_pass_label">Pass rate</span>
                             </div>
                             <div class="inst-bento-card">
-                                <span class="inst-bento-value">4+</span>
+                                <span class="inst-bento-value">5+</span>
                                 <span class="inst-bento-label" data-i18n="inst_years_label">Yillik tajriba</span>
                             </div>
                         </div>
@@ -923,8 +918,7 @@
                         </div>
                         <div class="faq-answer">
                             <p data-i18n="faq3_a">Ha, o'quv markazimizda kurs to'lovlarini bo'lib to'lash imkoniyati
-                                mavjud. Ayniqsa, do'stlarii bizning kurslarimizga taklif qilganlar uchun
-                                uchun maxsus chegirmali narxlar doirasida o'qish taklif qilinadi.
+                                mavjud. Do'stlarini taklif qilganlarga esa maxsus chegirmalar bor
                             </p>
                         </div>
                     </div>
@@ -971,7 +965,7 @@
                         <div class="faq-answer">
                             <p data-i18n="faq6_a">Kurslarimizga ro'yxatdan o'tish yoki to'liq ma'lumot olish uchun +998
                                 90 822 15 25
-                                raqamiga qo'ng'iroq qilishingiz mumkin. Shuningdek, Telegram orqali @vens_academy_admin
+                                raqamiga qo'ng'iroq qilishingiz mumkin. Shuningdek, Telegram orqali @VensAcademy
                                 sahifasiga yozish orqali ham ma'lumot olishingiz mumkin.</p>
                         </div>
                     </div>
@@ -1060,7 +1054,7 @@
                             </div>
                             <span>Instagram</span>
                         </a>
-                        <a href="https://t.me/vens_academy_admin" target="_blank" class="social-card">
+                        <a href="https://t.me/VensAcademy" target="_blank" class="social-card">
                             <div class="social-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
@@ -1179,14 +1173,14 @@
 
             // Working Students Logic
             const workingStudents = [
-                { name: "Ilyos Jumaev", papers: 6, company: "Samsung Electronics Uzbekistan", role: "Buxgalter" },
                 { name: "Avazov MuhammadAli", papers: 6, company: 'ИП ООО "NESTLE FOOD"', role: "Financial Analyst" },
-                { name: "Maqsudov Shaxriyor", papers: 7, company: 'АКБ "Xalq Banki"', role: "МСФО бош mutaxassis" },
-                { name: "Sagdullayev Diyorxoja", papers: 3, company: "NBU", role: "Yuridik mijozlarga xizmat ko'rsatish" },
-                { name: "Hosimova Rushana", papers: 9, company: 'АКБ "Turonbank"', role: "Moliyaviy xisobotlar bo'yicha mutaxassis" },
                 { name: "Toirjonov Tohirbek", papers: 9, company: "MOORE CA (Audit firm)", role: "Auditor" },
                 { name: "Ozodova Zulfizar", papers: 5, company: "KPMG (Big Four)", role: "Auditor" },
                 { name: "Axmatov Azizbek", papers: 2, company: "KPMG (Big Four)", role: "FP&A Specialist" },
+                { name: "Sagdullayev Diyorxoja", papers: 3, company: "NBU", role: "Yuridik mijozlarga xizmat ko'rsatish" },
+                { name: "Ilyos Jumaev", papers: 6, company: "Samsung Electronics Uzbekistan", role: "Buxgalter" },
+                { name: "Maqsudov Shaxriyor", papers: 7, company: 'АКБ "Xalq Banki"', role: "МСФО бош mutaxassis" },
+                { name: "Hosimova Rushana", papers: 9, company: 'АКБ "Turonbank"', role: "Moliyaviy xisobotlar bo'yicha mutaxassis" },
                 { name: "Raximov Davronbek", papers: 2, company: "Uzavtomotors", role: "Sifat nazoratchisi" },
                 { name: "Rasulov Bahodir", papers: 6, company: "Inspire advisory", role: "Financial consultant" },
                 { name: "Nuridtinov Qahramon", papers: 2, company: "Капиталбанк АТБ", role: "Bo'lim boshlig'i" },
@@ -1300,7 +1294,7 @@
                     }
                 }
             });
-            updateCountdown(lang);
+
         }
 
         function switchLanguage(lang) {
@@ -1334,35 +1328,7 @@
             });
         });
 
-        // --- Countdown Timer Logic ---
-        const targetDate = new Date("2026-04-14T00:00:00+05:00").getTime();
 
-        function updateCountdown(currentLang = 'uz') {
-            const now = new Date().getTime();
-            const difference = targetDate - now;
-            const timerEl = document.getElementById("countdown-timer");
-            if (!timerEl) return;
-
-            if (difference < 0) {
-                timerEl.innerHTML = "00:00:00";
-                return;
-            }
-
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-            const t = translations[currentLang] || translations['uz'];
-            const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-            timerEl.innerHTML = `${days} ${t.days}, ${formattedTime}`;
-        }
-
-        setInterval(() => {
-            const currentSubLang = localStorage.getItem('preferredLang') || 'uz';
-            updateCountdown(currentSubLang);
-        }, 1000);
 
         // --- UI Interactions ---
         document.addEventListener('DOMContentLoaded', () => {
@@ -1675,26 +1641,7 @@
                 });
             }
 
-            // Countdown Timer
-            const timerEl = document.getElementById('countdown-timer');
-            if (timerEl) {
-                let daysLeft = 5;
-                let hours = 0, mins = 0, secs = 0;
-                setInterval(() => {
-                    if (secs > 0) secs--;
-                    else {
-                        secs = 59;
-                        if (mins > 0) mins--;
-                        else {
-                            mins = 59;
-                            if (hours > 0) hours--;
-                        }
-                    }
-                    const lang = localStorage.getItem('preferredLang') || 'uz';
-                    const d = translations[lang].days;
-                    timerEl.innerHTML = `${daysLeft} ${d}, ${String(hours).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-                }, 1000);
-            }
+
 
             // Scroll animations
             const observerOptions = { threshold: 0.1 };
