@@ -2717,13 +2717,13 @@ nav.main-nav a:hover::before {
     flex-direction: column; 
     justify-content: flex-start; 
   }
-  .achiever-name { font-size: 1.4rem; font-weight: 900; line-height: 1.2; text-transform: uppercase; margin-bottom: 8px; }
+  .achiever-name { display: none; }
   .achiever-date { display: none; }
   
   .cert-image-wrapper { 
     height: 250px; 
-    margin-top: 60px;
-    transform: rotate(-10deg) scale(1.1) translateY(10px) translateX(20px); 
+    margin-top: 10px;
+    transform: rotate(0deg) scale(1) translateY(0) translateX(0); 
     display: flex;
     justify-content: center;
     align-items: center;
