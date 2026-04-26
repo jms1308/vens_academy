@@ -11,7 +11,11 @@
 </head>
 
 <body>
-
+    <div class="promo-banner">
+        <div class="container">
+            <span data-i18n="promo_text">Guruhlar uchun talabalar yig'ilmoqda...</span>
+        </div>
+    </div>
     <div class="container">
         <header>
             <!-- Logo -->
@@ -965,7 +969,7 @@
                         <div class="faq-answer">
                             <p data-i18n="faq6_a">Kurslarimizga ro'yxatdan o'tish yoki to'liq ma'lumot olish uchun +998
                                 90 822 15 25
-                                raqamiga qo'ng'iroq qilishingiz mumkin. Shuningdek, Telegram orqali @VensAcademy
+                                raqamiga qo'ng'iroq qilishingiz mumkin. Shuningdek, Telegram orqali @vens_academy_admin
                                 sahifasiga yozish orqali ham ma'lumot olishingiz mumkin.</p>
                         </div>
                     </div>
@@ -1054,7 +1058,7 @@
                             </div>
                             <span>Instagram</span>
                         </a>
-                        <a href="https://t.me/VensAcademy" target="_blank" class="social-card">
+                        <a href="https://t.me/vens_academy_admin" target="_blank" class="social-card">
                             <div class="social-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
@@ -1294,7 +1298,7 @@
                     }
                 }
             });
-
+            updateCountdown(lang);
         }
 
         function switchLanguage(lang) {
@@ -1328,7 +1332,35 @@
             });
         });
 
+        // --- Countdown Timer Logic ---
+        const targetDate = new Date("2026-04-14T00:00:00+05:00").getTime();
 
+        function updateCountdown(currentLang = 'uz') {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+            const timerEl = document.getElementById("countdown-timer");
+            if (!timerEl) return;
+
+            if (difference < 0) {
+                timerEl.innerHTML = "00:00:00";
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            const t = translations[currentLang] || translations['uz'];
+            const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+            timerEl.innerHTML = `${days} ${t.days}, ${formattedTime}`;
+        }
+
+        setInterval(() => {
+            const currentSubLang = localStorage.getItem('preferredLang') || 'uz';
+            updateCountdown(currentSubLang);
+        }, 1000);
 
         // --- UI Interactions ---
         document.addEventListener('DOMContentLoaded', () => {
@@ -1641,7 +1673,26 @@
                 });
             }
 
-
+            // Countdown Timer
+            const timerEl = document.getElementById('countdown-timer');
+            if (timerEl) {
+                let daysLeft = 5;
+                let hours = 0, mins = 0, secs = 0;
+                setInterval(() => {
+                    if (secs > 0) secs--;
+                    else {
+                        secs = 59;
+                        if (mins > 0) mins--;
+                        else {
+                            mins = 59;
+                            if (hours > 0) hours--;
+                        }
+                    }
+                    const lang = localStorage.getItem('preferredLang') || 'uz';
+                    const d = translations[lang].days;
+                    timerEl.innerHTML = `${daysLeft} ${d}, ${String(hours).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+                }, 1000);
+            }
 
             // Scroll animations
             const observerOptions = { threshold: 0.1 };

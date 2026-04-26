@@ -13,7 +13,24 @@
   box-sizing: border-box;
 }
 
+/* ===== PROMO BANNER ===== */
+.promo-banner {
+  background-color: #FACC15; /* Bright yellow from Ven's brand/accent */
+  color: #0F172A;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 999;
+  letter-spacing: -0.2px;
+}
 
+.promo-banner strong {
+  font-weight: 800;
+  color: #EB1C24; /* Urgent red */
+  margin: 0 4px;
+}
 
 /* Smooth scroll */
 html {
@@ -2387,7 +2404,24 @@ nav.main-nav a:hover::before {
   p { font-size: 0.95rem; }
   .container { padding: 0 16px; }
   
-
+  /* Promo Banner on Mobile - Thinner and more refined */
+  .promo-banner {
+    position: relative;
+    margin-top: 65px;
+    width: 100%;
+    z-index: 999;
+    padding: 6px 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .promo-banner strong {
+    font-weight: 700;
+    color: #DC2626; /* Slightly more refined red */
+    margin: 0 2px;
+  }
 
   /* ----- HEADER & HAMBURGER ----- */
   header {

@@ -1,6 +1,10 @@
 const translations = {
     uz: {
-
+        promo_text: "Guruhlar uchun talabalar yig'ilmoqda.",
+        days: "kun",
+        hours: "soat",
+        minutes: "daqiqa",
+        seconds: "soniya",
         nav_courses: "Kurslar",
         nav_results: "Natijalar",
         nav_instructors: "Ustozlarimiz",
@@ -142,7 +146,11 @@ const translations = {
         form_placeholder_phone: "+998 90 123 45 67"
     },
     ru: {
-
+        promo_text: "Идет набор студентов в группы.",
+        days: "дней",
+        hours: "часов",
+        minutes: "минут",
+        seconds: "секунд",
         nav_courses: "Курсы",
         nav_results: "Результаты",
         nav_instructors: "Преподаватели",
