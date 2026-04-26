@@ -1673,6 +1673,46 @@ nav.main-nav a:hover::before {
   border-radius: 4px;
 }
 
+.cert-overlay {
+  position: absolute;
+  top: 0;
+  left: 7.5%;
+  width: 85%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 4px;
+}
+
+.achiever-card:hover .cert-overlay {
+  opacity: 1;
+}
+
+.view-cert-btn {
+  background: #ffffff;
+  color: #1A56DB;
+  padding: 8px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.view-cert-btn:hover {
+  background: #1A56DB;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
 .result-badge {
   position: absolute;
   bottom: 25px;
@@ -1776,21 +1816,16 @@ nav.main-nav a:hover::before {
 
 .instructor-info {
   position: absolute;
-  inset: 0;
-  padding: 40px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  color: white;
-}
-
-.instructor-info {
-  width: 100%;
-  color: white;
-  z-index: 10;
-  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
+  color: white;
+  z-index: 10;
 }
 
 .instructor-main-info {
@@ -1798,15 +1833,15 @@ nav.main-nav a:hover::before {
 }
 
 .instructor-info h3 {
-  font-size: 2.8rem;
+  font-size: 2.1rem;
   font-weight: 900;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 
 .instructor-title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #D1D5DB;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .instructor-video-wrapper {
@@ -1829,8 +1864,8 @@ nav.main-nav a:hover::before {
 .instructor-stats-bento {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  width: 320px;
+  gap: 8px;
+  width: 250px;
 }
 
 .inst-bento-wide {
@@ -1841,7 +1876,7 @@ nav.main-nav a:hover::before {
   background: rgba(255,255,255,0.15);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  padding: 15px 20px;
+  padding: 10px 15px;
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.2);
   display: flex;
@@ -1849,14 +1884,14 @@ nav.main-nav a:hover::before {
 }
 
 .inst-bento-value {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-weight: 800;
   color: white;
   margin-bottom: 2px;
 }
 
 .inst-bento-label {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: #E5E7EB;
 }
 

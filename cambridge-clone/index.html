@@ -469,36 +469,7 @@
                         </div>
                     </div>
 
-                    <!-- Item 5 -->
-                    <div class="accordion-item">
-                        <div class="collapsed-content">
-                            <div class="icon-wrap">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="8.5" cy="7" r="4"></circle>
-                                    <polyline points="17 11 19 13 23 9"></polyline>
-                                </svg>
-                            </div>
-                            <div class="vertical-text" data-i18n="why_item5_v">Ishga Kafolat</div>
-                        </div>
-                        <div class="expanded-content">
-                            <div class="expanded-graphic">
-                                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#FF1E56"
-                                    stroke-width="1.5">
-                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="8.5" cy="7" r="4"></circle>
-                                    <polyline points="17 11 19 13 23 9"></polyline>
-                                </svg>
-                            </div>
-                            <div class="expanded-text">
-                                <h3 data-i18n="why_item5_title">Karyera boshlanishi</h3>
-                                <p data-i18n="why_item5_desc">Bizning ta'limni muvaffaqiyatli yakunlagan bitiruvchilarni
-                                    nufuzli kompaniyalarga ish
-                                    bilan ta'minlashga kafolat beramiz.</p>
-                            </div>
-                        </div>
-                    </div>
+
 
                     <!-- Item 6 -->
                     <div class="accordion-item">
@@ -794,11 +765,10 @@
 
                         <div class="instructor-stats-bento">
                             <div class="inst-bento-card inst-bento-wide">
-                                <span class="inst-bento-value" data-i18n="inst5_papers">8 Papers</span>
-                                <span class="inst-bento-label">ACCA Candidate</span>
+                                <span class="inst-bento-value" data-i18n="inst5_papers">9 Papers</span>
                             </div>
                             <div class="inst-bento-card">
-                                <span class="inst-bento-value">92%</span>
+                                <span class="inst-bento-value" data-i18n="inst_high">Yuqori</span>
                                 <span class="inst-bento-label" data-i18n="inst_pass_label">Pass rate</span>
                             </div>
                             <div class="inst-bento-card">
@@ -983,8 +953,7 @@
                             </svg>
                         </div>
                         <div class="faq-answer">
-                            <p data-i18n="faq5_a">Ven's Academy o'z o'quvchilariga ish bilan ta'minlashga kafolat
-                                beradi.
+                            <p data-i18n="faq5_a">
                                 Darslar davomida
                                 o'quvchilar real keyslar bilan amaliy ishlaydilar. Bu xalqaro va mahalliy katta
                                 kompaniyalarda, jumladan, moliya direktori, auditor yoki biznes boshqaruvi eksperti
@@ -1028,10 +997,7 @@
                             <div class="ef-icon">✓</div>
                             <span data-i18n="adv_card3_title">Individual yondashuv</span>
                         </div>
-                        <div class="e-feature">
-                            <div class="ef-icon">✓</div>
-                            <span data-i18n="why_item5_v">Ishga Kafolat</span>
-                        </div>
+
                     </div>
                 </div>
                 <div class="enrollment-form-container">
@@ -1134,23 +1100,28 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const topAchievers = [
-                { name: "ANVARBEK MURADOV", paper: "FA", result: "84", date: "01/04/2026" },
-                { name: "XONDAMIR MIRZOXIDOV", paper: "FA", result: "81", date: "28/03/2026" },
-                { name: "SOBIRJON SOBITJONOV", paper: "FA", result: "57", date: "18/03/2026" },
-                { name: "ZUMRAD ARTIQBOYEVA", paper: "FA", result: "91", date: "18/03/2026" },
-                { name: "ABBOSBEK RAJABOV", paper: "FA", result: "85", date: "28/02/2026" },
-                { name: "ABROR UMRZOQOV", paper: "FA", result: "85", date: "07/03/2026" },
-                { name: "AZIZA GOFUROVA", paper: "FA", result: "74", date: "11/03/2026" },
-                { name: "SARDOR QUDRATILLOYEV", paper: "FA", result: "59", date: "07/03/2026" },
-                { name: "YAKHYO YULDOSHEV", paper: "FA", result: "62", date: "18/02/2026" },
-                { name: "DAVRONBEK RUSTAMOV", paper: "FA", result: "59", date: "20/12/2025" },
-                { name: "CHINGIZ TOSHMURODOV", paper: "FA", result: "65", date: "20/12/2025" },
-                { name: "ADHAM NIZOMOV", paper: "MA", result: "82", date: "20/12/2025" },
-                { name: "JAVOHIR NOSIRJONOV", paper: "FA", result: "69", date: "21/06/2025" },
-                { name: "MIRJALOL KHAYDAROV", paper: "FA", result: "84", date: "08/03/2025" },
-                { name: "MEHRIDDIN DEHQONOV", paper: "FA", result: "81", date: "21/12/2024" },
-                { name: "ZULFIZAR OZODOVA", paper: "FA", result: "84", date: "08/06/2024" },
-                { name: "SHOKHJAKHON ERKINOV", paper: "MA", result: "75", date: "06/06/2023" }
+                { name: "ZUMRAD ARTIQBOYEVA", paper: "FA", result: "91", date: "18/03/2026", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.45.18.png" },
+                { name: "JAMSHIDBEK XOLIQULOV", paper: "FA", result: "92", date: "25/12/2024", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.45.29.png" },
+                { name: "ABROR UMRZOQOV", paper: "FA", result: "85", date: "07/03/2026", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.45.14.png" },
+                { name: "MIRJALOL KHAYDAROV", paper: "FA", result: "84", date: "08/03/2025", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.44.44.png" },
+                { name: "ZULFIZAR OZODOVA", paper: "FA", result: "84", date: "08/06/2024", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.45.33.png" },
+                { name: "ADHAM NIZOMOV", paper: "MA", result: "82", date: "20/12/2025", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.44.53.png" },
+                { name: "KOMRONBEK MIRZAYEV", paper: "FA", result: "82", date: "12/08/2023", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.44.09.png" },
+                { name: "MEHRIDDIN DEHQONOV", paper: "FA", result: "81", date: "21/12/2024", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.45.26.png" },
+                { name: "JAMSHIDBEK XOLIQULOV", paper: "MA", result: "80", date: "08/10/2025", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.44.40.png" },
+                { name: "ALI XOLMIRZAYEV", paper: "FA", result: "76", date: "25/06/2025", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.45.31.png" },
+                { name: "SHAKHZOD MATYOZOV", paper: "MA", result: "73", date: "06/06/2023", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.44.36.png" },
+                { name: "MUXAMMADALI AXMEDOV", paper: "FA", result: "72", date: "20/03/2024", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.44.19.png" },
+                { name: "JAVOHIR OCHILBOYEV", paper: "FA", result: "71", date: "23/12/2023", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.43.31.png" },
+                { name: "SHAXZOD ZOKIROV", paper: "FA", result: "70", date: "11/06/2025", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.44.47.png" },
+                { name: "HUSANBOY QURBONOV", paper: "FA", result: "69", date: "13/04/2024", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.43.17.png" },
+                { name: "NODIRBEK GULOMOV", paper: "FA", result: "67", date: "20/12/2025", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.44.56.png" },
+                { name: "DILSHODBEK YULDOSHOV", paper: "FA", result: "65", date: "03/04/2024", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.43.05.png" },
+                { name: "MUXAMMADZIYO TOXIROV", paper: "FA", result: "64", date: "25/06/2025", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.45.23.png" },
+                { name: "YAKHYO YULDOSHEV", paper: "FA", result: "62", date: "18/02/2026", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.45.06.png" },
+                { name: "SARDOR QUDRATILLOYEV", paper: "FA", result: "59", date: "07/03/2026", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.45.11.png" },
+                { name: "DAVRONBEK RUSTAMOV", paper: "FA", result: "59", date: "20/12/2025", cert: "images/Certificates/Screenshot%202026-04-26%20at%2013.45.02.png" },
+                { name: "BEHRUZ RAIMOV", paper: "FA", result: "58", date: "30/03/2024", cert: "images/Certificates/Behruz.png" }
             ];
 
             const grid = document.getElementById('achieversGrid');
@@ -1168,6 +1139,7 @@
                     card.style.animationDelay = `${index * 0.05}s`;
                     const currentSubLang = localStorage.getItem('preferredLang') || 'uz';
                     const t = translations[currentSubLang] || translations['uz'];
+                    const viewCertLabel = t.view_cert || "View";
                     const resLabel = t.result_label || "Result";
 
                     card.innerHTML = `
@@ -1175,7 +1147,7 @@
                         <h3 class="achiever-name">${student.name}</h3>
                         <p class="achiever-date">${student.date}</p>
                         <div class="cert-image-wrapper">
-                            <img src="images/cert-placeholder.png" alt="ACCA Certificate" class="cert-image">
+                            <img src="${student.cert}" alt="ACCA Certificate" class="cert-image">
                         </div>
                         <div class="achiever-score">
                             <div class="glass-badge">
